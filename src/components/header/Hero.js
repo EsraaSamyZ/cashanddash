@@ -1,6 +1,6 @@
 import React from 'react';
 import img from "./image1.gif";
-import GetOfferBtn from '../GetOfferBtn';
+import GetOfferBtn from '../Shared/GetOfferBtn';
 import "./style.css"
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
     return (
 
         <div className="relative" style={{ height: '824px', width: '1500px' }}>
-            <div className='w-full mx-auto mx-20'>
+            <div className='w-full mx-20'>
                 <div className="absolute top-0 left-0 w-full h-full" style={{
                     backgroundColor: 'black',
                     // backgroundImage: `url(${img})`,

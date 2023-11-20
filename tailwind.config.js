@@ -9,7 +9,7 @@ module.exports = {
         'deep-crimson': '#D11142', 
         'royal-blue': '#385CAD',  
         'midnight-blue': '#09183B',
-        'sky-blue': '#4280EF',    
+        'dark-blue': '#193163',    
       },
       fontFamily: {
         sans: ['Avenir Next Pro', 'Helvetica', 'Arial', 'sans-serif'],

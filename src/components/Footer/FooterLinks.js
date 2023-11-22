@@ -13,20 +13,20 @@ const FooterLinks = () => {
 
     return (
         <div className='w-4/5 mx-auto'>
-            <div className="text-white py-8 md:py-16">
-                <div className="container mx-auto flex flex-wrap justify-evenly sm:space-y-4 md:space-y-0">
+            <div className="text-white py-8 lg:py-16">
+                <div className="container mx-auto flex flex-wrap justify-evenly sm:space-y-4 lg:space-y-0">
 
                     {/* Navigation */}
-                    <div className="w-full md:w-1/5">
+                    <div className="w-full lg:w-1/5">
                         <button
-                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl lg:text-2xl font-semibold mb-5 w-full text-center md:text-left lg:hidden"
                             onClick={() => toggleSection('navigation')}
                         >
                             Navigation
                         </button>
-                        <div className={`${openSection === 'navigation' ? '' : 'hidden'} md:block`}>
-                            <h3 className="text-2xl font-semibold mb-5 hidden md:block">Navigation</h3>
-                            <ul className='pl-6 lg:pl-0 md:text-xl text-light-gray'>
+                        <div className={`${openSection === 'navigation' ? '' : 'hidden'} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
+                            <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Navigation</h3>
+                            <ul className='pl-6 lg:pl-0 lg:text-xl text-light-gray'>
                                 <li className='mb-3'>Home</li>
                                 <li className='mb-3'>About Us</li>
                                 <li className='mb-3'>How It Works</li>
@@ -38,16 +38,16 @@ const FooterLinks = () => {
                     </div>
 
                     {/* What We Do */}
-                    <div className="w-full md:w-1/5">
+                    <div className="w-full lg:w-1/5">
                         <button
-                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl lg:text-2xl font-semibold mb-5 w-full text-center md:text-left lg:hidden"
                             onClick={() => toggleSection('whatwedo')}
                         >
                             What We Do
                         </button>
-                        <div className={`${openSection === 'whatwedo' ? '' : 'hidden'} md:block`}>
-                            <h3 className="text-2xl font-semibold mb-5 hidden md:block">What We Do</h3>
-                            <ul className='pl-6 lg:pl-0 md:text-xl text-light-gray'>
+                        <div className={`${openSection === 'whatwedo' ? '' : 'hidden'} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
+                            <h3 className="text-2xl font-semibold mb-5 hidden lg:block">What We Do</h3>
+                            <ul className='pl-6 lg:pl-0 lg:text-xl text-light-gray'>
                                 <li className='mb-3'>Instant Car Offer</li>
                                 <li className='mb-3'>Quick Sale Process</li>
                                 <li className='mb-3'>Free Car Inspection</li>
@@ -58,16 +58,16 @@ const FooterLinks = () => {
                     </div>
 
                     {/* Legal */}
-                    <div className="w-full md:w-1/5">
+                    <div className="w-full lg:w-1/5">
                         <button
-                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl lg:text-2xl font-semibold mb-5 w-full text-center md:text-left lg:hidden"
                             onClick={() => toggleSection('legal')}
                         >
                             Legal
                         </button>
-                        <div className={`${openSection === 'legal' ? '' : 'hidden'} md:block`}>
-                            <h3 className="text-2xl font-semibold mb-5 hidden md:block">Legal</h3>
-                            <ul className='pl-6 lg:pl-0 md:text-xl text-light-gray'>
+                        <div className={`${openSection === 'legal' ? '' : 'hidden'} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
+                            <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Legal</h3>
+                            <ul className='pl-6 lg:pl-0 lg:text-xl text-light-gray'>
                                 <li className='mb-3'>Terms and Conditions</li>
                                 <li className='mb-3'>Privacy Policy</li>
                                 <li className='mb-3'>Cookies Policy</li>
@@ -77,16 +77,16 @@ const FooterLinks = () => {
                     </div>
 
                     {/* Talk To Us */}
-                    <div className="w-full md:w-1/5">
+                    <div className="w-full lg:w-1/5">
                         <button
-                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl lg:text-2xl font-semibold mb-5 w-full text-center md:text-left lg:hidden"
                             onClick={() => toggleSection('talktous')}
                         >
                             Talk To Us
                         </button>
-                        <div className={`${openSection === 'talktous' ? '' : 'hidden'} md:block`}>
-                            <h3 className="text-2xl font-semibold mb-5 hidden md:block">Talk To Us</h3>
-                            <div className="pl-6 lg:pl-0 md:text-xl">
+                        <div className={`${openSection === 'talktous' ? '' : 'hidden'} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
+                            <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Talk To Us</h3>
+                            <div className="pl-6 lg:pl-0 lg:text-xl">
                                 <p className='mb-3'>123 Driven St., Santa Maria, CA 93458</p>
                                 <p className='mb-3'>contact@centralcoast-drivenautopurchases.com</p>
                                 <p className='mb-3'>(805) XXX-XXXX</p>

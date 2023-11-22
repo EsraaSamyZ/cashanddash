@@ -81,7 +81,7 @@ const FAQs = () => {
     return (
         <div className='w-4/5 mx-auto text-center space-y-9 pb-9'>
             <h2 className='text-black text-3xl md:text-5xl font-extrabold mx-auto'>Frequently Asked <span className='text-deep-crimson'>Questions</span></h2>
-            <div className='md:w-1/2 mx-auto'>
+            <div className='lg:w-1/2 mx-auto'>
                 <FaqSection accordionData={accordionData} toggleItem={toggleItem} openItem={openItem} />
             </div>
         </div>

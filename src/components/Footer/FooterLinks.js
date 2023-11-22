@@ -19,7 +19,7 @@ const FooterLinks = () => {
                     {/* Navigation */}
                     <div className="w-full md:w-1/5">
                         <button
-                            className="text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
                             onClick={() => toggleSection('navigation')}
                         >
                             Navigation
@@ -40,7 +40,7 @@ const FooterLinks = () => {
                     {/* What We Do */}
                     <div className="w-full md:w-1/5">
                         <button
-                            className="text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
                             onClick={() => toggleSection('whatwedo')}
                         >
                             What We Do
@@ -60,7 +60,7 @@ const FooterLinks = () => {
                     {/* Legal */}
                     <div className="w-full md:w-1/5">
                         <button
-                            className="text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
                             onClick={() => toggleSection('legal')}
                         >
                             Legal
@@ -79,7 +79,7 @@ const FooterLinks = () => {
                     {/* Talk To Us */}
                     <div className="w-full md:w-1/5">
                         <button
-                            className="text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
+                            className="text-xl md:text-2xl font-semibold mb-5 w-full text-center md:text-left md:hidden"
                             onClick={() => toggleSection('talktous')}
                         >
                             Talk To Us

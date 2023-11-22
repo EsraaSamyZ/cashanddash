@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import IconOpen from './one.inline.svg'
-import IconCollapsed from './two.inline.svg'
+import IconOpen from '../../images/svg/one.inline.svg'
+import IconCollapsed from '../../images/svg/two.inline.svg'
 
 const FaqSection = ({ accordionData, toggleItem, openItem }) => {
     return (
@@ -10,7 +10,7 @@ const FaqSection = ({ accordionData, toggleItem, openItem }) => {
                 <div key={index} className="rounded-none border border-l-0 border-r-0 border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800 transition duration-300 ease-in-out">
                     <h2 className="mb-0" id={`flush-heading${index}`}>
                         <button
-                            className={`group relative flex w-full justify-between items-center rounded-none border-0 bg-white px-5 py-5 text-left text-xl transition-colors duration-300 ease-in-out ${openItem === index ? 'text-blue-500 dark:text-white' : 'text-neutral-800'}`}
+                            className={`group relative flex w-full justify-between items-center rounded-none border-0 bg-white px-5 py-5 text-left text-lg md:text-xl transition-colors duration-300 ease-in-out ${openItem === index ? 'text-blue-500 dark:text-white' : 'text-neutral-800'}`}
                             type="button"
                             onClick={() => toggleItem(index)}
                             aria-expanded={openItem === index}
@@ -25,7 +25,7 @@ const FaqSection = ({ accordionData, toggleItem, openItem }) => {
                         className={`transition-height duration-800 ease-in-out ${openItem === index ? 'visible' : 'hidden'} border-0`}
                         aria-labelledby={`flush-heading${index}`}
                     >
-                        <div className="px-5 py-4 text-left" style={{ whiteSpace: 'pre-line' }}>
+                        <div className="px-5 py-4 text-left text-sm md:text-base" style={{ whiteSpace: 'pre-line' }}>
                             {item.content}
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const FAQs = () => {
     const accordionData = [
         { 
             title: "Will You Beat my KBB Instant Cash Offer?", 
-            content: "Yes. We will either (A) surpass your KKB Instant Cash Offer or (B) guarantee to hand you a $100 if we can’t beat their offer." 
+            content: "Yes. We will either \n(A) surpass your KKB Instant Cash Offer or \n(B) guarantee to hand you a $100 if we can’t beat their offer." 
         },
         { 
             title: "Can I Cash My 805C&D Check?", 
@@ -79,9 +79,9 @@ const FAQs = () => {
     ];
 
     return (
-        <div className='w-4/5 mx-auto text-center space-y-9'>
-            <h2 className='text-black text-5xl font-extrabold mx-auto'>Frequently Asked <span className='text-deep-crimson'>Questions</span></h2>
-            <div className='w-1/2 mx-auto'>
+        <div className='w-4/5 mx-auto text-center space-y-9 pb-9'>
+            <h2 className='text-black text-3xl md:text-5xl font-extrabold mx-auto'>Frequently Asked <span className='text-deep-crimson'>Questions</span></h2>
+            <div className='md:w-1/2 mx-auto'>
                 <FaqSection accordionData={accordionData} toggleItem={toggleItem} openItem={openItem} />
             </div>
         </div>

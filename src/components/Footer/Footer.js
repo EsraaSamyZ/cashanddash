@@ -10,15 +10,19 @@ const Footer = () => {
     <footer >
       <FooterSection />
       <div className='bg-midnight-blue'>
-        <div className='text-center py-16 space-y-24'>
+
+        <div className='text-center py-8 md:py-16 space-y-12 md:space-y-24'>
+
           <div className='space-y-8 w-4/5 mx-auto'>
             <h2 className='text-white text-3xl md:text-5xl font-extrabold'>Stay Connected with The Central Coast's Premier Car Buyer</h2>
-            <p className='text-lg md:text-2xl text-white'>Whether you're in Santa Maria, Lompoc, San Luis Obispo, or anywhere else in the 805 area, 805 CashandDash is your go-to destination for buying and selling cars. </p>
+            <p className='text-base md:text-2xl text-white'>Whether you're in Santa Maria, Lompoc, San Luis Obispo, or anywhere else in the 805 area, 805 CashandDash is your go-to destination for buying and selling cars. </p>
           </div>
-          <div className='space-x-3'>
+
+          <div className='md:space-x-3 space-y-3'>
             <ContactUsBtn />
             <GetOfferBtn />
           </div>
+
         </div>
 
         <FooterLinks />
@@ -35,6 +39,7 @@ const Footer = () => {
           <div className='py-5 text-light-gray text-xs md:text-base text-center'>
             <p>© 2023 Central Coast Driven Auto Purchases. All Rights Reserved.</p>
           </div>
+
         </div>
 
       </div>

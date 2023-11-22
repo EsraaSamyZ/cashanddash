@@ -17,7 +17,7 @@ const Kbb = () => {
                 <Form />
                 <KbbText />
             </div>
-            <ContainerShape />
+            {/* <ContainerShape /> */}
         </div>
     );
 };

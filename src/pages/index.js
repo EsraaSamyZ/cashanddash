@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import Kbb from "../components/KBB/Kbb"
 import Howto from "../components/Howto/Howto"
 import InstaPosts from "../components/InstaPosts/InstaPosts"
+import SellersReviews from "../components/SellersReviews/SellersReviews"
 // import * as styles from "../components/index.module.css"
 
 
@@ -16,7 +17,11 @@ const IndexPage = () => (
   <Layout>
     <Kbb />
     <Howto />
-    <InstaPosts />
+    <div className="space-y-44">
+      <InstaPosts />
+      <SellersReviews />
+    </div>
+
   </Layout>
 )
 

@@ -8,6 +8,8 @@ import Kbb from "../components/KBB/Kbb"
 import Howto from "../components/Howto/Howto"
 import InstaPosts from "../components/InstaPosts/InstaPosts"
 import SellersReviews from "../components/SellersReviews/SellersReviews"
+import Services from "../components/Services/Services"
+import FAQs from "../components/FAQs/FAQs"
 // import * as styles from "../components/index.module.css"
 
 
@@ -21,7 +23,8 @@ const IndexPage = () => (
       <InstaPosts />
       <SellersReviews />
     </div>
-
+    <Services />
+    <FAQs />
   </Layout>
 )
 

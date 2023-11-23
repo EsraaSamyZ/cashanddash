@@ -1,5 +1,5 @@
 import React from 'react';
-import ArrowIcon from './GetOfferBtn.inline.svg'
+import ArrowIcon from '../../images/svg/GetOfferBtn.inline.svg'
 
 const GetOfferBtn = () => {
     return (

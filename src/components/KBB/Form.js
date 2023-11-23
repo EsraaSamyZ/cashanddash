@@ -1,22 +1,6 @@
-// import React from 'react'
-
-// const Form = () => {
-//   return (
-//     <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md" style={{boxShadow: '0px 0px 50px 0px rgba(0, 0, 0, 0.25)'}}>
-
-//       <div className="p-10 text-center space-y-4">
-//         <h2 className="text-2xl font-semibold text-gray-800">Tell Us About Your Car</h2>
-//         <p className="mt-2 text-gray-600">Your License Plate or VIN helps us fill in key details about your vehicle and ensures a more accurate offer.</p>
-//       {/* 3 links simillar to a nav (license plate, VIN, Make/model)  when click on VIN a input + go btn appears, when click on license plate a input for the plate number and a dropdown to choose the state and go btn, when click on made/model a form will appear with fields*/}
-//       </div>
-
-//     </div>
-//   )
-// }
-
-// export default Form
-
 import React, { useState } from 'react';
+import ArrowIcon from '../../images/svg/GetOfferBtn.inline.svg'
+import LockIcon from '../../images/svg/Lock.inline.svg'
 
 const Form = () => {
   const [activeSection, setActiveSection] = useState('vin');
@@ -27,10 +11,16 @@ const Form = () => {
     make: '',
     model: '',
     style: '',
-    milage: '',
+    mileage: '',
     year: ''
   });
   const [errors, setErrors] = useState({});
+
+  // Dummy data for the select options
+  const yearOptions = ['2021', '2022', '2023'];
+  const makeOptions = ['Toyota', 'Honda', 'Ford'];
+  const modelOptions = ['Camry', 'Civic', 'F-150'];
+  const styleOptions = ['Sedan', 'SUV', 'Truck'];
 
   const validate = () => {
     let tempErrors = {};
@@ -61,46 +51,170 @@ const Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  return (
-    <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md">
-      <div className="p-10 text-center space-y-4">
-        <h2 className="text-3xl font-semibold text-gray-800">Tell Us About Your Car</h2>
-        <p className="mt-2 text-gray-600">Your License Plate or VIN helps us fill in key details about your vehicle and ensures a more accurate offer.</p>
+  const isActive = (section) => activeSection === section ? "border-b-4 border-royal-blue font-bold text-royal-blue" : "";
 
-        <div className='flex justify-between text-center'>
-          <button onClick={() => setActiveSection('licensePlate')}>License Plate</button>
-          <button onClick={() => setActiveSection('vin')}>VIN</button>
-          <button onClick={() => setActiveSection('makeModel')}>Make/Model</button>
+  return (
+    <div className="bg-white rounded-xl overflow-hidden border shadow-md max-w-lg" style={{ boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.25)" }}>
+      <div className="p-10 text-center space-y-6">
+        <h2 className="text-3xl font-bold text-black">Tell Us About Your Car</h2>
+        <p className="text-sm  text-gray-800">Your License Plate or VIN helps us fill in key details about your vehicle and ensures a more accurate offer.</p>
+
+
+        <div className='text-lg flex justify-between text-center'>
+          <button className={isActive('licensePlate')} onClick={() => setActiveSection('licensePlate')}>License Plate</button>
+          <button className={isActive('vin')} onClick={() => setActiveSection('vin')}>VIN</button>
+          <button className={isActive('makeModel')} onClick={() => setActiveSection('makeModel')}>Make/Model</button>
         </div>
 
         <form onSubmit={handleSubmit}>
-          {activeSection === 'licensePlate' && (
-            <>
-              <input type="text" name="licensePlate" placeholder="License Plate" value={formData.licensePlate} onChange={handleChange} />
-              {errors.licensePlate && <p>{errors.licensePlate}</p>}
-              <select name="state" value={formData.state} onChange={handleChange}>
-                <option value="">Select State</option>
-                {/* Populate with state options */}
-              </select>
-              <p>We only need your license plate to look up your car. It will not be stored</p>
-              {errors.state && <p>{errors.state}</p>}
-            </>
-          )}
-          {activeSection === 'vin' && (
-            <>
-              <input type="text" name="vin" placeholder="VIN" value={formData.vin} onChange={handleChange} />
-              {errors.vin && <p>{errors.vin}</p>}
-            </>
-          )}
-          {activeSection === 'makeModel' && (
-            <>
-              <input type="text" name="make" placeholder="Make" value={formData.make} onChange={handleChange} />
-              {errors.make && <p>{errors.make}</p>}
-              <input type="text" name="model" placeholder="Model" value={formData.model} onChange={handleChange} />
-              {errors.model && <p>{errors.model}</p>}
-            </>
-          )}
-          <button type="submit">Go</button>
+          <div className="space-y-6">
+
+            {activeSection === 'licensePlate' && (
+              <>
+                <div className="flex space-x-1">
+                  <input className="w-full text-md border border-dark-gray px-6 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none" type="text" name="licensePlate" placeholder="License Plate" value={formData.licensePlate} onChange={handleChange} />
+                  <div className="relative">
+                    <select
+                      className="h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
+                      name="state"
+                      value={formData.state}
+                      onChange={handleChange}
+                    >
+                      <option value="" disabled hidden>Select</option>
+                      {/* this will be a list */}
+                    </select>
+                    <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
+                      <span className="text-xs text-gray-500">State</span>
+                    </div>
+                  </div>
+                  <button type="submit" className="w-17 text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"><span className='mr-1'>Go</span><ArrowIcon /></button>
+                </div>
+                <div className="text-sm text-deep-crimson text-left">
+                  {errors.licensePlate && <p>{errors.licensePlate}</p>}
+                  {errors.state && <p>{errors.state}</p>}
+                </div>
+                <p className="text-sm text-gray-800 mt-3">We only need your license plate to look up your car. It will not be stored.</p>
+              </>
+            )}
+
+            {activeSection === 'vin' && (
+              <>
+                <div className="flex space-x-1">
+                  <input className="w-full text-md border border-dark-gray px-6 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none" type="text" name="vin" placeholder="Enter the 17-digit VIN" value={formData.vin} onChange={handleChange} />
+                  <button type="submit" className="w-17 text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"><span className='mr-1'>Go</span><ArrowIcon /></button>
+                </div>
+                {errors.vin && <p className="text-red-500">{errors.vin}</p>}
+                <p className="text-sm text-royal-blue"><a href="#">Where is my VIN?</a></p>
+              </>
+            )}
+
+            {activeSection === 'makeModel' && (
+              <>
+                <div className="flex space-x-1">
+                  <div className="w-1/2 relative">
+                    <select
+                      className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
+                      name="year"
+                      value={formData.year}
+                      onChange={handleChange}
+                    >
+                      <option value="" disabled hidden>Select</option>
+                      {yearOptions.map(year => <option key={year} value={year}>{year}</option>)}
+                    </select>
+                    <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
+                      <span className="text-xs text-gray-500">Year</span>
+                    </div>
+
+                  </div>
+
+                  <div className="w-1/2 relative">
+                    <select
+                      className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
+                      name="make"
+                      value={formData.make}
+                      onChange={handleChange}
+                      disabled={!formData.year}
+                    >
+                      <option value="" disabled hidden>Select</option>
+                      {makeOptions.map(make => <option key={make} value={make}>{make}</option>)}
+                    </select>
+                    <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
+                      <span className="text-xs text-gray-500">Make</span>
+                    </div>
+                    {!formData.year && (
+                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                        <LockIcon />
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+
+                <div className="relative">
+                  <select
+                    className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
+                    name="model"
+                    value={formData.model}
+                    onChange={handleChange}
+                    disabled={!formData.make}
+                  >
+                    <option value="" disabled hidden>Select</option>
+                    {modelOptions.map(model => <option key={model} value={model}>{model}</option>)}
+                  </select>
+                  <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
+                    <span className="text-xs text-gray-500">Model</span>
+                  </div>
+                  {!formData.make && (
+                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                      <LockIcon />
+                    </div>
+                  )}
+                </div>
+
+                <div className="relative">
+                  <select
+                    className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
+                    name="style"
+                    value={formData.style}
+                    onChange={handleChange}
+                    disabled={!formData.model}
+                  >
+                    <option value="" disabled hidden>Select</option>
+                    {styleOptions.map(style => <option key={style} value={style}>{style}</option>)}
+                  </select>
+                  <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
+                    <span className="text-xs text-gray-500">Style</span>
+                  </div>
+                  {!formData.model && (
+                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                      <LockIcon />
+                    </div>
+                  )}
+                </div>
+
+                <div className="relative">
+                  <input
+                    className={`w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none`}
+                    type="text"
+                    name="mileage"
+                    placeholder="Enter Mileage"
+                    value={formData.mileage}
+                    onChange={handleChange}
+                    disabled={!formData.style}
+                  />
+
+                  {!formData.style && (
+                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                      <LockIcon />
+                    </div>
+                  )}
+                </div>
+
+                <button type="submit" className="w-full text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"><span className='mr-2'>Go</span><ArrowIcon /></button>
+              </>
+            )}
+
+          </div>
         </form>
       </div>
     </div>
@@ -108,3 +222,4 @@ const Form = () => {
 };
 
 export default Form;
+

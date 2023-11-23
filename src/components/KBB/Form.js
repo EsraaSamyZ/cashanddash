@@ -51,16 +51,16 @@ const Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const isActive = (section) => activeSection === section ? "border-b-4 border-royal-blue font-bold text-royal-blue" : "";
+  const isActive = (section) => activeSection === section ? "border-4 md:border-b-4 md:border-t-0 md:border-l-0 md:border-r-0 border-royal-blue font-bold text-royal-blue" : "";
 
   return (
-    <div className="bg-white rounded-xl overflow-hidden border shadow-md max-w-lg" style={{ boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.25)" }}>
+    <div className="bg-white rounded-xl overflow-hidden border shadow-md " style={{ boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.25)" }}>
       <div className="p-10 text-center space-y-6">
         <h2 className="text-3xl font-bold text-black">Tell Us About Your Car</h2>
         <p className="text-sm  text-gray-800">Your License Plate or VIN helps us fill in key details about your vehicle and ensures a more accurate offer.</p>
 
 
-        <div className='text-lg flex justify-between text-center'>
+        <div className='text-lg flex flex-col w-fit mx-auto space-y-3 md:space-y-0 md:w-full md:flex-row md:justify-between md:text-center'>
           <button className={isActive('licensePlate')} onClick={() => setActiveSection('licensePlate')}>License Plate</button>
           <button className={isActive('vin')} onClick={() => setActiveSection('vin')}>VIN</button>
           <button className={isActive('makeModel')} onClick={() => setActiveSection('makeModel')}>Make/Model</button>
@@ -71,11 +71,11 @@ const Form = () => {
 
             {activeSection === 'licensePlate' && (
               <>
-                <div className="flex space-x-1">
+                <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-1">
                   <input className="w-full text-md border border-dark-gray px-6 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none" type="text" name="licensePlate" placeholder="License Plate" value={formData.licensePlate} onChange={handleChange} />
                   <div className="relative">
                     <select
-                      className="h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
+                      className="w-full md:w-auto h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                       name="state"
                       value={formData.state}
                       onChange={handleChange}
@@ -87,7 +87,7 @@ const Form = () => {
                       <span className="text-xs text-gray-500">State</span>
                     </div>
                   </div>
-                  <button type="submit" className="w-17 text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"><span className='mr-1'>Go</span><ArrowIcon /></button>
+                  <button type="submit" className="w-full md:w-fit text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"><span className='mr-1'>Go</span><ArrowIcon /></button>
                 </div>
                 <div className="text-sm text-deep-crimson text-left">
                   {errors.licensePlate && <p>{errors.licensePlate}</p>}
@@ -99,11 +99,11 @@ const Form = () => {
 
             {activeSection === 'vin' && (
               <>
-                <div className="flex space-x-1">
+                <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-1">
                   <input className="w-full text-md border border-dark-gray px-6 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none" type="text" name="vin" placeholder="Enter the 17-digit VIN" value={formData.vin} onChange={handleChange} />
-                  <button type="submit" className="w-17 text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"><span className='mr-1'>Go</span><ArrowIcon /></button>
+                  <button type="submit" className="w-full md:w-fit text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"><span className='mr-1'>Go</span><ArrowIcon /></button>
                 </div>
-                {errors.vin && <p className="text-red-500">{errors.vin}</p>}
+                {errors.vin && <p className="text-sm text-deep-crimson text-left">{errors.vin}</p>}
                 <p className="text-sm text-royal-blue"><a href="#">Where is my VIN?</a></p>
               </>
             )}

@@ -12,30 +12,30 @@ const Appointment = () => {
         <div className='lg:w-2/5 bg-gray-200 p-2 lg:p-4 rounded-2xl'>
             <div className='bg-dark-blue p-8 lg:p-16 space-y-8 rounded-2xl'>
 
-                <ol class="relative text-gray-200 border-s border-white">
-                    <li class="mb-4 ms-8 text-left">
-                        <span class="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
+                <ol className="relative text-gray-200 border-s border-white">
+                    <li className="mb-4 ms-8 text-left">
+                        <span className="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
                         </span>
-                        <h3 class="font-bold text-base md:text-xl mb-2">Get Your KBB ICO Offer</h3>
-                        <p class="text-sm md:text-md">Submit your vehicles info in the tool above.</p>
+                        <h3 className="font-bold text-base md:text-xl mb-2">Get Your KBB ICO Offer</h3>
+                        <p className="text-sm md:text-md">Submit your vehicles info in the tool above.</p>
                     </li>
-                    <li class="mb-4 ms-8 text-left">
-                        <span class="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
+                    <li className="mb-4 ms-8 text-left">
+                        <span className="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
                         </span>
-                        <h3 class="font-bold text-base md:text-xl mb-2">Receive our Cash & Dash Offer</h3>
-                        <p class="text-sm md:text-md">Within 24 hours, will contact with our Cash & Dash offer!</p>
+                        <h3 className="font-bold text-base md:text-xl mb-2">Receive our Cash & Dash Offer</h3>
+                        <p className="text-sm md:text-md">Within 24 hours, will contact with our Cash & Dash offer!</p>
                     </li>
-                    <li class="mb-4 ms-8 text-left">
-                        <span class="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
+                    <li className="mb-4 ms-8 text-left">
+                        <span className="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
                         </span>
-                        <h3 class="font-bold text-base md:text-xl mb-2">Make an appointment.</h3>
-                        <p class="text-sm md:text-md">Click the appointment button or wait for a call from us to schedule your appointment.</p>
+                        <h3 className="font-bold text-base md:text-xl mb-2">Make an appointment.</h3>
+                        <p className="text-sm md:text-md">Click the appointment button or wait for a call from us to schedule your appointment.</p>
                     </li>
-                    <li class="mb-4 ms-8 text-left">
-                        <span class="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
+                    <li className="mb-4 ms-8 text-left">
+                        <span className="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5">
                         </span>
-                        <h3 class="font-bold text-base md:text-xl mb-2">Drive In, Cash Out!</h3>
-                        <p class="text-sm md:text-md">Get paid today</p>
+                        <h3 className="font-bold text-base md:text-xl mb-2">Drive In, Cash Out!</h3>
+                        <p className="text-sm md:text-md">Get paid today</p>
                     </li>
                 </ol>
 

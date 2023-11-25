@@ -1,9 +1,9 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header/Header"
 import Footer from "./Footer/Footer"
 import "./layout.css"
+import Navbar from "./Header/Navbar"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
-        <main>{children}</main>
-        <Footer />
+      <header><Navbar /></header>
+      <main>{children}</main>
+      <footer><Footer /></footer>
     </>
   )
 }

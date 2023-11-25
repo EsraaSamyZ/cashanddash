@@ -7,7 +7,7 @@ import SectionShape from '../../images/svg/sectionShape.inline.svg'
 const Howto = () => {
     return (
         <>
-            <SectionShape  className='transform rotate-180'/>
+            {/* <SectionShape  className='transform rotate-180 -mb-[1px]'/> */}
             <div className='bg-midnight-blue items-center text-center'>
                 <div className='w-4/5 mx-auto'>
                     <h2 className=' text-white text-3xl md:text-5xl font-extrabold font-extrabold'>How to <span className='text-deep-crimson'>CASH & DASH</span></h2>
@@ -18,7 +18,7 @@ const Howto = () => {
                     </div>
                     </div>
             </div>
-            <SectionShape />
+            <SectionShape className='-mt-[1px]' />
         </>
     )
 }

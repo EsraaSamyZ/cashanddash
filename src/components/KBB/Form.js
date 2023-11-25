@@ -54,7 +54,7 @@ const Form = () => {
   const isActive = (section) => activeSection === section ? "border-4 md:border-b-4 md:border-t-0 md:border-l-0 md:border-r-0 border-royal-blue font-bold text-royal-blue" : "";
 
   return (
-    <div className="bg-white rounded-xl overflow-hidden border shadow-md " style={{ boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.25)" }}>
+    <div className="bg-white rounded-xl overflow-hidden border shadow-md" style={{ boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.25)" }}>
       <div className="p-10 text-center space-y-6">
         <h2 className="text-3xl font-bold text-black">Tell Us About Your Car</h2>
         <p className="text-sm  text-gray-800">Your License Plate or VIN helps us fill in key details about your vehicle and ensures a more accurate offer.</p>

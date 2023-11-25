@@ -7,8 +7,8 @@ import FooterLinks from './FooterLinks'
 
 const Footer = () => {
   return (
-    <footer >
-      <FooterSection />
+    <>
+      <FooterSection className=' -mb-[1px]'/>
       <div className='bg-midnight-blue'>
 
         <div className='text-center py-8 md:py-16 space-y-12 md:space-y-24'>
@@ -18,7 +18,7 @@ const Footer = () => {
             <p className='text-base md:text-2xl text-white'>Whether you're in Santa Maria, Lompoc, San Luis Obispo, or anywhere else in the 805 area, 805 CashandDash is your go-to destination for buying and selling cars. </p>
           </div>
 
-          <div className='md:space-x-3 space-y-3'>
+          <div className='md:space-x-3 md:space-y-0 space-y-3 flex flex-col md:flex-row justify-center items-center'>
             <ContactUsBtn />
             <GetOfferBtn />
           </div>
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
 
       </div>
-    </footer>
+    </>
   )
 }
 

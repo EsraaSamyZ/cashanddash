@@ -82,7 +82,7 @@ const HeroComponent = () => {
                 position: 'absolute',
                 width: '100%',
                 height: '100%',
-                backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.71) 40%, rgba(97, 97, 97, 0.30) 100%)`,
+                backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.2) 100%)`,
                 zIndex: -2
             }}>
             </div>

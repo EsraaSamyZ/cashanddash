@@ -20,7 +20,7 @@ const ArrowIcon = () => (
   </svg>
 )
 
-const Appointment = () => {
+const Appointment = ({ setShowForm }) => {
 
   return (
     <div className="lg:w-2/5 bg-gray-200 p-2 lg:p-4 rounded-2xl">

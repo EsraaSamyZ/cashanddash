@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Video from './Video'
 import Appointment from './Appointment'
 import SectionShape from '../../images/svg/sectionShape.inline.svg'
+import AppointmentForm from './AppointmentForm';
 
 
 const Howto = () => {
+    const [showForm, setShowForm] = useState(false);
+    console.log(showForm)
+
     return (
         <>
             {/* <SectionShape  className='transform rotate-180 -mb-[1px]'/> */}
@@ -13,12 +17,14 @@ const Howto = () => {
                     <h2 className=' text-white text-3xl md:text-5xl font-extrabold font-extrabold'>How to <span className='text-deep-crimson'>CASH & DASH</span></h2>
 
                     <div className='py-12 flex flex-col-reverse lg:flex lg:flex-row lg:items-center lg:justify-between'>
-                        <Appointment />
+                        <Appointment setShowForm={setShowForm} />
                         <Video />
                     </div>
                     </div>
             </div>
             <SectionShape className='-mt-[1px]' />
+
+            {showForm && <AppointmentForm setShowForm={setShowForm} />}
         </>
     )
 }

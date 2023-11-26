@@ -129,7 +129,7 @@ const Navbar = () => {
     }
   };
 
-  const navbarClasses = `bg-transparent text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${!isTop ? 'bg-dark-gray' : ''}`;
+  const navbarClasses = `bg-dark-gray text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${isTop ? 'bg-transparent' : ''}`;
 
   return (
     <nav className={navbarClasses}>

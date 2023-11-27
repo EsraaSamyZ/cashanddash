@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, Suspense } from 'react';
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { Link } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -96,7 +96,7 @@ const IndexPage = () => {
           backgroundPosition: 'top',
         }}>
           <Suspense fallback={loader}>
-          <Kbb className="animate-fade-up animate-duration-1000 animate-delay-300"/>
+          <Kbb />
           </Suspense>
         </div>
 

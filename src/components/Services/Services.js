@@ -1,6 +1,6 @@
 import React from 'react';
 import ServicesCard from './ServicesCard';
-import ServicesSection from '../../images/svg/servicesSection.inline.svg';
+import ServicesSection from '../../images/svg/shape2.svg';
 import Icon1 from '../../images/svg/icon1.inline.svg'; 
 import Icon2 from '../../images/svg/icon2.inline.svg'; 
 import Icon3 from '../../images/svg/icon3.inline.svg'; 
@@ -32,7 +32,8 @@ const Services = () => {
 
     return (
         <div className='my-9 bg-light-gray'>
-            <ServicesSection />
+            <img src={ServicesSection} className='-mb-[1px]' style={{ width: '100%' }} />
+
             <div className='w-4/5 mx-auto space-y-9 text-center py-9'>
                 <h2 className='text-black text-2xl md:text-5xl font-extrabold md:w-4/5 mx-auto'>Complimentary <span className='text-deep-crimson'>Services</span> When You Sell Your Car to 805 Cash & Dash</h2>
                 <p className=' text-lg md:text-2xl md:w-4/5 mx-auto'>Searching for your dream car has never been easier. Here's what you can expect when you use our platform to buy a car</p>
@@ -43,7 +44,7 @@ const Services = () => {
                     ))}
                 </div>
             </div>
-            <ServicesSection className='transform rotate-180'/>
+            <img src={ServicesSection} className='transform rotate-180 -mt-[1px]' style={{ width: '100%' }} />
         </div>
     );
 };

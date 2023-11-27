@@ -28,7 +28,7 @@ const FooterLinks = () => {
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Navigation</h3>
                             <ul className='pl-6 lg:pl-0 lg:text-xl text-light-gray'>
                                 <li className='mb-3'>Home</li>
-                                <li className='mb-3'>About Us</li>
+                                {/* <li className='mb-3'>About Us</li> */}
                                 <li className='mb-3'>How It Works</li>
                                 <li className='mb-3'>Reviews</li>
                                 <li className='mb-3'>FAQs</li>
@@ -49,7 +49,7 @@ const FooterLinks = () => {
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">What We Do</h3>
                             <ul className='pl-6 lg:pl-0 lg:text-xl text-light-gray'>
                                 <li className='mb-3'>Instant Car Offer</li>
-                                <li className='mb-3'>Quick Sale Process</li>
+                                <li className='mb-3'>Quick Purchace Process</li>
                                 <li className='mb-3'>Free Car Inspection</li>
                                 <li className='mb-3'>Flexible Appointments</li>
                                 <li className='mb-3'>Eco-Friendly Disposals for Vehicles</li>

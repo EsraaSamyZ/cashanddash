@@ -85,12 +85,12 @@ const Form = () => {
           >
             VIN
           </button>
-          <button
+          {/* <button
             className={isActive("makeModel")}
             onClick={() => setActiveSection("makeModel")}
           >
             Make/Model
-          </button>
+          </button> */}
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -222,7 +222,7 @@ const Form = () => {
               </>
             )}
 
-            {activeSection === "makeModel" && (
+            {/* {activeSection === "makeModel" && (
               <>
                 <div className="flex space-x-1">
                   <div className="w-1/2 relative">
@@ -354,7 +354,7 @@ const Form = () => {
                   <ArrowIcon />
                 </button>
               </>
-            )}
+            )} */}
           </div>
         </form>
       </div>

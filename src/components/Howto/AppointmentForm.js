@@ -37,7 +37,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                                     type="text"
                                     name="name"
-                                    // placeholder="Enter Name"
+                                    placeholder="Enter Name"
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
@@ -51,7 +51,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                                     type="tel"
                                     name="phone"
-                                    // placeholder="Enter Phone Number"
+                                    placeholder="Enter Phone Number"
                                     value={formData.phone}
                                     onChange={handleChange}
                                     required
@@ -65,7 +65,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                                     type="email"
                                     name="email"
-                                    // placeholder="Enter Email"
+                                    placeholder="Enter Email"
                                     value={formData.email}
                                     onChange={handleChange}
                                 />
@@ -78,7 +78,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                                     type="text"
                                     name="make"
-                                    // placeholder="Enter Car Make"
+                                    placeholder="Enter Car Make"
                                     value={formData.make}
                                     onChange={handleChange}
                                     required
@@ -92,7 +92,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                                     type="text"
                                     name="model"
-                                    // placeholder="Enter Car Model"
+                                    placeholder="Enter Car Model"
                                     value={formData.model}
                                     onChange={handleChange}
                                     required
@@ -106,7 +106,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                                     type="text"
                                     name="year"
-                                    // placeholder="Enter Car Year"
+                                    placeholder="Enter Car Year"
                                     value={formData.year}
                                     onChange={handleChange}
                                     required
@@ -120,7 +120,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                                     type="text"
                                     name="mileage"
-                                    // placeholder="Enter Mileage"
+                                    placeholder="Enter Mileage"
                                     value={formData.mileage}
                                     onChange={handleChange}
                                     required

@@ -1,8 +1,7 @@
 import React from 'react'
 import Form from './Form'
 import KbbText from './KbbText'
-import bg from '../../images/bg-kbb.png'
-import SectionShape from '../../images/svg/sectionShape.inline.svg'
+import sectionShape from '../../images/svg/shape.svg'
 
 const Kbb = () => {
     return (
@@ -11,7 +10,7 @@ const Kbb = () => {
                 <Form />
                 <KbbText />
             </div>
-            <SectionShape className='transform rotate-180 -mb-[1px]' />
+            <img src={sectionShape} className='transform rotate-180 -mb-[1px]' style={{ width: '100%' }} />
         </>
     );
 };

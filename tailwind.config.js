@@ -25,7 +25,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    // Add any Tailwind plugins you wish to use here
-    // For example: require('@tailwindcss/forms'),
+    require('tailwindcss-animated')
   ],
 }

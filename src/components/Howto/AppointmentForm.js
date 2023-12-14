@@ -20,7 +20,7 @@ const AppointmentForm = ({ setShowForm }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Submit logic here (e.g., API call)
-        console.log(formData);
+        // console.log(formData);
         setThankMsg(true)
     };
 

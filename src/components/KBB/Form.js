@@ -1,52 +1,56 @@
 import React, { useState } from "react"
 import ArrowIcon from "../../images/svg/GetOfferBtn.inline.svg"
-import LockIcon from "../../images/svg/Lock.inline.svg"
+import VinOverlay from './VinOverlay';
+import { checkVIN, checkPlate } from '../Shared/Api';
 
 const Form = () => {
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+
+    const toggleOverlay = () => {
+        setIsOverlayVisible(!isOverlayVisible);
+    };
+
   const [activeSection, setActiveSection] = useState("vin")
   const [formData, setFormData] = useState({
     licensePlate: "",
     state: "",
     vin: "",
-    make: "",
-    model: "",
-    style: "",
-    mileage: "",
-    year: "",
   })
   const [errors, setErrors] = useState({})
 
-  // Dummy data for the select options
-  const yearOptions = ["2021", "2022", "2023"]
-  const makeOptions = ["Toyota", "Honda", "Ford"]
-  const modelOptions = ["Camry", "Civic", "F-150"]
-  const styleOptions = ["Sedan", "SUV", "Truck"]
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const validate = () => {
-    let tempErrors = {}
-    if (activeSection === "licensePlate") {
-      if (!formData.licensePlate)
-        tempErrors.licensePlate = "License plate is required"
-      if (!formData.state) tempErrors.state = "State is required"
-    } else if (activeSection === "vin") {
-      if (!formData.vin) tempErrors.vin = "VIN is required"
-      else if (formData.vin.length !== 17)
-        tempErrors.vin = "VIN must be 17 characters"
-    } else if (activeSection === "makeModel") {
-      if (!formData.make) tempErrors.make = "Make is required"
-      if (!formData.model) tempErrors.model = "Model is required"
-    }
-    setErrors(tempErrors)
-    return Object.keys(tempErrors).length === 0
+  // Clear previous errors
+  setErrors({});
+
+  // Perform validation (example for VIN)
+  if (activeSection === "vin" && !formData.vin) {
+    setErrors({ vin: "VIN is required" });
+    return;
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    if (validate()) {
-      console.log("Form Data:", formData)
-      // Submit form data
+  try {
+    let result;
+
+    // Make API call based on active section
+    if (activeSection === "vin") {
+      result = await checkVIN(formData.vin);
+    } else if (activeSection === "licensePlate") {
+      // Assuming you have a function for checking license plate
+      result = await checkPlate(formData.licensePlate, formData.state);
     }
+
+    // Handle the response
+    if (result && result.results) {
+      window.location.href = result.results;
+    }
+  } catch (error) {
+    console.error('There was a problem with the API call:', error);
+    // setErrors({ apiError: error.message });
   }
+};
+
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -72,7 +76,7 @@ const Form = () => {
           vehicle and ensures a more accurate offer.
         </p>
 
-        <div className="text-lg flex flex-col w-fit mx-auto space-y-3 md:space-y-0 md:w-full md:flex-row md:justify-between md:text-center">
+        <div className="text-lg flex flex-col w-fit mx-auto space-y-3 md:space-y-0 md:w-full md:flex-row md:justify-evenly md:text-center">
           <button
             className={isActive("licensePlate")}
             onClick={() => setActiveSection("licensePlate")}
@@ -85,12 +89,6 @@ const Form = () => {
           >
             VIN
           </button>
-          {/* <button
-            className={isActive("makeModel")}
-            onClick={() => setActiveSection("makeModel")}
-          >
-            Make/Model
-          </button> */}
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -116,7 +114,6 @@ const Form = () => {
                       <option value="" disabled hidden>
                         Select
                       </option>
-
                       <option value="AK">AK</option>
                       <option value="AL">AL</option>
                       <option value="AR">AR</option>
@@ -206,6 +203,7 @@ const Form = () => {
                   <button
                     type="submit"
                     className="w-full md:w-fit text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"
+
                   >
                     <span className="mr-1">Go</span>
                     <ArrowIcon />
@@ -216,145 +214,16 @@ const Form = () => {
                     {errors.vin}
                   </p>
                 )}
-                <p className="text-sm text-royal-blue">
-                  <a href="#">Where is my VIN?</a>
-                </p>
+                <div>
+                  <p className="text-sm text-royal-blue">
+                    <a onClick={toggleOverlay}>
+                      Where is my VIN?
+                    </a>
+                  </p>
+                  {isOverlayVisible && <VinOverlay setIsOverlayVisible={setIsOverlayVisible} />}
+                </div>
               </>
             )}
-
-            {/* {activeSection === "makeModel" && (
-              <>
-                <div className="flex space-x-1">
-                  <div className="w-1/2 relative">
-                    <select
-                      className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
-                      name="year"
-                      value={formData.year}
-                      onChange={handleChange}
-                    >
-                      <option value="" disabled hidden>
-                        Select
-                      </option>
-                      {yearOptions.map(year => (
-                        <option key={year} value={year}>
-                          {year}
-                        </option>
-                      ))}
-                    </select>
-                    <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
-                      <span className="text-xs text-gray-500">Year</span>
-                    </div>
-                  </div>
-
-                  <div className="w-1/2 relative">
-                    <select
-                      className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
-                      name="make"
-                      value={formData.make}
-                      onChange={handleChange}
-                      disabled={!formData.year}
-                    >
-                      <option value="" disabled hidden>
-                        Select
-                      </option>
-                      {makeOptions.map(make => (
-                        <option key={make} value={make}>
-                          {make}
-                        </option>
-                      ))}
-                    </select>
-                    <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
-                      <span className="text-xs text-gray-500">Make</span>
-                    </div>
-                    {!formData.year && (
-                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                        <LockIcon />
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <select
-                    className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
-                    name="model"
-                    value={formData.model}
-                    onChange={handleChange}
-                    disabled={!formData.make}
-                  >
-                    <option value="" disabled hidden>
-                      Select
-                    </option>
-                    {modelOptions.map(model => (
-                      <option key={model} value={model}>
-                        {model}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
-                    <span className="text-xs text-gray-500">Model</span>
-                  </div>
-                  {!formData.make && (
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                      <LockIcon />
-                    </div>
-                  )}
-                </div>
-
-                <div className="relative">
-                  <select
-                    className="w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
-                    name="style"
-                    value={formData.style}
-                    onChange={handleChange}
-                    disabled={!formData.model}
-                  >
-                    <option value="" disabled hidden>
-                      Select
-                    </option>
-                    {styleOptions.map(style => (
-                      <option key={style} value={style}>
-                        {style}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="absolute top-0 left-3 transform -translate-y-1/2 bg-white px-1">
-                    <span className="text-xs text-gray-500">Style</span>
-                  </div>
-                  {!formData.model && (
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                      <LockIcon />
-                    </div>
-                  )}
-                </div>
-
-                <div className="relative">
-                  <input
-                    className={`w-full h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none`}
-                    type="text"
-                    name="mileage"
-                    placeholder="Enter Mileage"
-                    value={formData.mileage}
-                    onChange={handleChange}
-                    disabled={!formData.style}
-                  />
-
-                  {!formData.style && (
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                      <LockIcon />
-                    </div>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full text-lg text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-lg p-3 bg-royal-blue text-center inline-flex items-center justify-center"
-                >
-                  <span className="mr-2">Go</span>
-                  <ArrowIcon />
-                </button>
-              </>
-            )} */}
           </div>
         </form>
       </div>

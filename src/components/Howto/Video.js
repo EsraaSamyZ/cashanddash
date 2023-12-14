@@ -1,8 +1,11 @@
 import React from 'react'
+import vi from "../../images/Video.png"
 
 const Video = () => {
   return (
-    <div className='w-3/5 text-white'>Video</div>
+    <div className='rounded-lg overflow-hidden text-white mb-8 md:mb-0'>
+      <img src={vi} />
+    </div>
   )
 }
 

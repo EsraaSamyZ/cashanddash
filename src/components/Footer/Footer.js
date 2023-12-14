@@ -47,9 +47,9 @@ const Footer = () => {
 
         <div className="bg-royal-blue">
           <div className="py-11 space-y-6 text-center mx-auto">
-            <div>
+            <div className="flex flex-col items-center">
               <LogoColor className="mx-auto" />
-              <span className="text-xl text-white">by car motive</span>
+              <span className="text-xl text-white">By Carmotive</span>
             </div>
             <p className="text-light-gray md:text-xl w-3/5 mx-auto">
               Are you looking to buy or sell a car in the 805 area code? 805

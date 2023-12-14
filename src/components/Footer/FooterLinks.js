@@ -87,8 +87,8 @@ const FooterLinks = () => {
                         <div className={`${openSection === 'talktous' ? '' : 'hidden'} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Talk To Us</h3>
                             <div className="pl-6 lg:pl-0 lg:text-xl">
-                                <p className='mb-3'>123 Driven St., Santa Maria, CA 93458</p>
-                                <p className='mb-3'>contact@centralcoast-drivenautopurchases.com</p>
+                                <p className='mb-3'>1921 N Broadway Suite A, Santa Maria, CA 93459</p>
+                                <p className='mb-3'>Info@805cashanddash.com</p>
                                 <p className='mb-3'>(805) XXX-XXXX</p>
                                 <a href="#" className='mb-3 block'>Contact Us</a>
                                 <a href="#" className='mb-3 block'>Facebook</a>

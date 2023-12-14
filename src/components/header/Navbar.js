@@ -26,14 +26,19 @@ const Navbar = () => {
     }
   }
 
-  const navbarClasses = `bg-dark-gray text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${isTop ? "bg-transparent" : ""
-    }`
+  const navbarClasses = `bg-dark-gray text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${
+    isTop ? "bg-transparent" : ""
+  }`
+
+  const handleOfferClick = () => {
+    window.location.href =
+      "https://www.kbb.com/instant-cash-offer/W/69724927/43A6F9B8-DB6C-48C0-A360-F658B2176E3E/"
+  }
 
   return (
     <nav className={navbarClasses}>
       <div className="w-4/5 mx-auto flex flex-wrap items-center justify-between py-4">
-
-        <div>
+        <div className="flex flex-col items-center">
           <a
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse w-auto"
@@ -41,7 +46,7 @@ const Navbar = () => {
           >
             <Logo />
           </a>
-          <span>by car motive</span>
+          <span className="text-sm">By Carmotive</span>
         </div>
 
         <div className="flex items-center space-x-3">
@@ -55,6 +60,7 @@ const Navbar = () => {
             <button
               type="button"
               className="hidden md:flex text-lg text-white bg-royal-blue hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-2 text-center flex items-center"
+              onClick={handleOfferClick}
             >
               <span className="mr-4">Get Offer</span>
               <ArrowIcon />

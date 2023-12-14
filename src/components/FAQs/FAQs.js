@@ -7,10 +7,10 @@ const FaqSection = ({ accordionData, toggleItem, openItem }) => {
     return (
         <div id="accordionFlushExample">
             {accordionData.map((item, index) => (
-                <div key={index} className="rounded-none border border-l-0 border-r-0 border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800 transition duration-300 ease-in-out">
+                <div key={index} className="rounded-none border border-l-0 border-r-0 border-t-0 border-neutral-200 bg-white transition duration-300 ease-in-out">
                     <h2 className="mb-0" id={`flush-heading${index}`}>
                         <button
-                            className={`group relative flex w-full justify-between items-center rounded-none border-0 bg-white px-5 py-5 text-left text-lg md:text-xl transition-colors duration-300 ease-in-out ${openItem === index ? 'text-royal-blue dark:text-white' : 'text-neutral-800'}`}
+                            className={`group relative flex w-full justify-between items-center rounded-none border-0 bg-white px-5 py-5 text-left text-lg md:text-xl transition-colors duration-300 ease-in-out ${openItem === index ? 'text-royal-blue' : 'text-neutral-800'}`}
                             type="button"
                             onClick={() => toggleItem(index)}
                             aria-expanded={openItem === index}

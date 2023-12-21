@@ -107,7 +107,7 @@ const IndexPage = () => {
       </Suspense>
       <div className="space-y-44">
       <Suspense fallback={loader}><InstaPosts /></Suspense>
-      <Suspense fallback={loader}><SellersReviews /></Suspense>
+      {/* <Suspense fallback={loader}><SellersReviews /></Suspense> */}
       </div>
       <Suspense fallback={loader}><Services /></Suspense>
       <Suspense fallback={loader}><FAQs /></Suspense>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const AppointmentForm = ({ setShowForm }) => {
     const [thankMsg, setThankMsg] = useState(false)
+    console.log(setShowForm)
 
     const [formData, setFormData] = useState({
         name: '',
@@ -19,18 +20,18 @@ const AppointmentForm = ({ setShowForm }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Submit logic here (e.g., API call)
+        // Submit API call
         // console.log(formData);
         setThankMsg(true)
     };
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center" onClick={() => setShowForm(false)}>
+        <div className="fixed inset-0 top-0 right-0 bg-black bg-opacity-50 z-50 flex justify-center items-center" onClick={() => setShowForm(false)}>
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full" onClick={e => e.stopPropagation()}>
                 {!thankMsg ? (
                     <>
-                        <h3 className="text-center text-lg font-bold mb-4">Schedule Appointment</h3>
+                        <h3 className="text-black text-center text-lg font-bold mb-4">Schedule Appointment</h3>
                         <form onSubmit={handleSubmit}>
                             <div className="relative mb-4">
                                 <input

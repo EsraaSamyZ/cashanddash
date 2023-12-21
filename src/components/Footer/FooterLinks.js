@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ContactUsBtn from '../Shared/ContactUsBtn';
 
 const FooterLinks = () => {
     const [openSection, setOpenSection] = useState(null);
@@ -28,7 +29,6 @@ const FooterLinks = () => {
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Navigation</h3>
                             <ul className='pl-6 lg:pl-0 lg:text-xl text-light-gray'>
                                 <li className='mb-3'>Home</li>
-                                {/* <li className='mb-3'>About Us</li> */}
                                 <li className='mb-3'>How It Works</li>
                                 <li className='mb-3'>Reviews</li>
                                 <li className='mb-3'>FAQs</li>
@@ -89,8 +89,9 @@ const FooterLinks = () => {
                             <div className="pl-6 lg:pl-0 lg:text-xl">
                                 <p className='mb-3'>1921 N Broadway Suite A, Santa Maria, CA 93459</p>
                                 <p className='mb-3'>Info@805cashanddash.com</p>
-                                <p className='mb-3'>(805) XXX-XXXX</p>
-                                <a href="#" className='mb-3 block'>Contact Us</a>
+                                {/* <p className='mb-3'>(805) XXX-XXXX</p> */}
+                                <ContactUsBtn className={'mb-3 block'} />
+                                {/* <a href="#" className='mb-3 block'>Contact Us</a> */}
                                 <a href="#" className='mb-3 block'>Facebook</a>
                                 <a href="#" className='mb-3 block'>Instagram</a>
                             </div>

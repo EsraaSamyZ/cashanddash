@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from "react"
+import AppointmentForm from "../Howto/AppointmentForm"
 
-const ContactUsBtn = () => {
-    return (
-        <button type="button" className="text-xl text-dark-gray bg-white border border-dark-gray hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-md text-sm px-8 py-3 text-center  w-52">
-            <span className=''>Contact Us</span>
-        </button>
-    );
+const ContactUsBtn = ({ className }) => {
+  const [showForm, setShowForm] = useState(false)
+
+  return (
+    <>
+      <button
+        type="button"
+        className={className}
+        onClick={() => setShowForm(true)}
+      >
+        <span className="">Contact Us</span>
+      </button>
+      {showForm && <AppointmentForm setShowForm={setShowForm} />}
+    </>
+  )
 }
 
-export default ContactUsBtn;
+export default ContactUsBtn

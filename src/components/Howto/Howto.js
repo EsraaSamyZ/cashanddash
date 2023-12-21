@@ -7,7 +7,6 @@ import sectionShape from '../../images/svg/shape.svg'
 
 const Howto = () => {
     const [showForm, setShowForm] = useState(false);
-    console.log(showForm)
 
     return (
         <>
@@ -15,7 +14,7 @@ const Howto = () => {
                 <div className='w-4/5 mx-auto'>
                     <h2 className=' text-white text-3xl md:text-5xl font-extrabold font-extrabold'>How to <span className='text-deep-crimson'>CASH & DASH</span></h2>
 
-                    <div className='py-12 flex flex-col-reverse lg:flex lg:flex-row lg:items-center lg:justify-between'>
+                    <div className='py-12 flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between'>
                         <Appointment  setShowForm={setShowForm} />
                         <Video />
                     </div>

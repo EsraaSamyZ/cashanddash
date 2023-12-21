@@ -16,8 +16,8 @@ const FaqSection = ({ accordionData, toggleItem, openItem }) => {
                             aria-expanded={openItem === index}
                             aria-controls={`flush-collapse${index}`}
                         >
-                            {item.title}
-                            {openItem === index ? <IconOpen /> : <IconCollapsed />}
+                            <span>{item.title}</span>
+                            <span className='ml-2'>{openItem === index ? <IconOpen /> : <IconCollapsed />}</span>
                         </button>
                     </h2>
                     <div

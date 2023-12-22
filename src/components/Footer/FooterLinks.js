@@ -69,8 +69,8 @@ const FooterLinks = () => {
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Legal</h3>
                             <ul className='pl-6 lg:pl-0 lg:text-xl text-light-gray'>
                                 <li className='mb-3'>Terms and Conditions</li>
-                                <li className='mb-3'>Privacy Policy</li>
-                                <li className='mb-3'>Cookies Policy</li>
+                                <li className='mb-3'><a href='/policies'>Privacy Policy</a></li>
+                                <li className='mb-3'><a href='/policies'>Cookies Policy</a></li>
                                 <li className='mb-3'>Sitemap</li>
                             </ul>
                         </div>

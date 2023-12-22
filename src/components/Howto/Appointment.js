@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import AppointmentForm from "./AppointmentForm"
 
 const ArrowIcon = () => (
   <svg

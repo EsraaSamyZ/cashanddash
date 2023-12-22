@@ -59,12 +59,12 @@ const handleSubmit = async (e) => {
 
   const isActive = section =>
     activeSection === section
-      ? "border-4 md:border-b-4 md:border-t-0 md:border-l-0 md:border-r-0 border-royal-blue font-bold text-royal-blue"
+      ? "px-0.5 border-4 md:border-b-4 md:border-t-0 md:border-l-0 md:border-r-0 border-royal-blue font-bold text-royal-blue"
       : ""
 
   return (
     <div
-      className="bg-white rounded-xl overflow-hidden border shadow-md"
+      className="mt-8 md:mr-16 md:mt-0 bg-white rounded-xl overflow-hidden border shadow-md"
       style={{ boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.25)" }}
     >
       <div className="p-10 text-center space-y-6">
@@ -216,7 +216,7 @@ const handleSubmit = async (e) => {
                 )}
                 <div>
                   <p className="text-sm text-royal-blue">
-                    <a onClick={toggleOverlay}>
+                    <a className="cursor-pointer p-2" onClick={toggleOverlay}>
                       Where is my VIN?
                     </a>
                   </p>

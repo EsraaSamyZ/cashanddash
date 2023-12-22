@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Video from './Video'
 import Appointment from './Appointment'
-import AppointmentForm from './AppointmentForm';
+import AppointmentForm from '../Shared/AppointmentForm';
 import sectionShape from '../../images/svg/shape.svg'
 
 

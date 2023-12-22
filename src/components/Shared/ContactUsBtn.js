@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import AppointmentForm from "../Howto/AppointmentForm"
+import AppointmentForm from "./AppointmentForm"
 
 const ContactUsBtn = ({ className }) => {
   const [showForm, setShowForm] = useState(false)

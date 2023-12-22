@@ -103,7 +103,7 @@ const Navbar = () => {
         </button>
 
         {/* Side Menu for Mobile View */}
-        <div ref={menuRef} className={`fixed inset-y-0 left-0 z-50 w-48 p-4 bg-white transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out md:hidden`}>
+        <div ref={menuRef} className={`fixed inset-y-0 left-0 z-40 w-48 h-full p-4 bg-white transform shadow-2xl ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out md:hidden`}>
           <ul className="space-y-4">
             <li>
               <Link
@@ -142,13 +142,8 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="space-y-4 mt-4">
+
             <ContactUsBtn className="w-full text-lg text-royal-blue bg-white border-royal-blue border hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-2 text-center" />
-            {/* <button
-              type="button"
-              className="w-full text-lg text-royal-blue bg-white border-royal-blue border hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-2 text-center"
-            >
-              Contact Us
-            </button> */}
             <button
               type="button"
               className="w-full text-lg text-white bg-royal-blue hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-2 text-center flex items-center justify-center"
@@ -165,12 +160,6 @@ const Navbar = () => {
           {/* Buttons */}
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <ContactUsBtn className="text-lg text-royal-blue bg-white border-royal-blue border hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-2 text-center mr-4" />
-            {/* <button
-              type="button"
-              className="text-lg text-royal-blue bg-white border-royal-blue border hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-2 text-center mr-4"
-            >
-              Contact Us
-            </button> */}
             <button
               type="button"
               className="text-lg text-white bg-royal-blue hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-2 text-center flex items-center"

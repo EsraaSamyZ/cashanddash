@@ -14,18 +14,15 @@ const InstaCard = ({
 }) => {
 
   return (
-    <div
-      className="bg-white rounded-2xl border overflow-hidden p-2.5 space-y-3 text-left w-fit"
-      style={{ boxShadow: "2px 6px 15px 0px rgba(0, 0, 0, 0.12)" }}
-    >
+    <div className="bg-light-gray bg-opacity-50 md:bg-white rounded-2xl border overflow-hidden mx-12 md:m-0 p-2.5 space-y-3 text-left md:shadow-custom">
       <a href={link}>
         <img
-          className="w-96 h-72 object-cover rounded-2xl mx-auto"
+          className="aspect-square object-cover rounded-2xl mx-auto border md:border-0"
           src={img}
           alt="Card Image"
         />
         <div className="space-y-3 px-2">
-          <h2 className="text-md text-gray-800">
+          <h2 className="text-sm md:text-base text-gray-800">
             Liked by <span className="font-semibold">{username}</span>
           </h2>
           <div className="flex items-center justify-between w-full">
@@ -39,8 +36,8 @@ const InstaCard = ({
           <div className="flex">
             <Quotes className="m-1" />
             <div className="space-y-3">
-              <p className="text-md w-72 line-clamp-2">{caption}</p>
-              <p className="text-sm text-gray-600">{date}</p>
+              <p className="text-xs md:text-base line-clamp-2">{caption}</p>
+              <p className="text-xs md:text-sm text-gray-600">{date}</p>
             </div>
           </div>
         </div>

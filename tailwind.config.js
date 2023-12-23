@@ -17,6 +17,9 @@ module.exports = {
         sans: ['Avenir Next Pro', 'Helvetica', 'Arial', 'sans-serif'],
         'serif': ['Georgia', 'Times New Roman', 'serif'],
       },
+      boxShadow: {
+        'custom': '2px 6px 15px 0px rgba(0, 0, 0, 0.12)',
+      },
     },
   },
   variants: {

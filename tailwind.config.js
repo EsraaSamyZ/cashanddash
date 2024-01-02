@@ -23,8 +23,6 @@ module.exports = {
     },
   },
   variants: {
-    // Configure the variants here
-    // For example, you can enable 'disabled' or 'visited' variants for certain utilities
     extend: {},
   },
   plugins: [

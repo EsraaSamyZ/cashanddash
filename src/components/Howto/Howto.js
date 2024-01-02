@@ -14,11 +14,12 @@ const Howto = () => {
                 <div className='w-4/5 mx-auto'>
                     <h2 className=' text-white text-3xl md:text-5xl font-extrabold font-extrabold'>How to <span className='text-deep-crimson'>CASH & DASH</span></h2>
 
-                    <div className='py-12 flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between'>
-                        <Appointment  setShowForm={setShowForm} />
-                        <Video />
+                    <div className='py-12 flex flex-col-reverse lg:flex-row lg:items-stretch lg:justify-center'>
+                            <Appointment setShowForm={setShowForm} />
+                            <Video />
                     </div>
-                    </div>
+
+                </div>
             </div>
             <img src={sectionShape} className='-mt-[1px]' style={{ width: '100%' }} />
 

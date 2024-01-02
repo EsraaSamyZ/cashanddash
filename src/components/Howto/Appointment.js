@@ -23,7 +23,7 @@ const Appointment = ({ setShowForm }) => {
 
   return (
     <div className="lg:w-2/5 bg-gray-200 p-2 lg:p-4 rounded-2xl">
-      <div className="bg-dark-blue p-8 lg:p-16 space-y-8 rounded-2xl">
+      <div className="bg-dark-blue p-8 lg:p-16 space-y-8 rounded-2xl h-full">
         <ol className="relative text-gray-200 border-s border-white">
           <li className="mb-4 ms-8 text-left">
             <span className="absolute flex items-center justify-center w-3 h-3 bg-gray-100 rounded-full -start-1.5"></span>
@@ -61,6 +61,7 @@ const Appointment = ({ setShowForm }) => {
             <p className="text-sm md:text-md">Get paid today</p>
           </li>
         </ol>
+
 
         <button
           type="button"

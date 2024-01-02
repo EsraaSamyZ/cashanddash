@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import InstaCard from "./InstaCard"
 import { getPosts } from "../Shared/Api"
-import axios from "axios"
 
 const InstaPosts = () => {
   const [posts, setPosts] = useState([])
@@ -50,10 +49,9 @@ const InstaPosts = () => {
       <div className="md:hidden relative">
         <div className="overflow-hidden">
           <div className="flex transition-transform duration-300" id="slider">
-            {posts.map((post, index) => (
+          {posts.map((post) => (
               <div className="flex-shrink-0 w-full" key={post.id}>
                 <InstaCard
-                  key={post.id}
                   username={post.username}
                   caption={post.caption}
                   date={new Date(post.timestamp).toLocaleDateString()}
@@ -86,8 +84,7 @@ const InstaPosts = () => {
 
       {/* md view */}
       <div className="hidden md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-3">
-        {posts.slice(0, 6).map(post => (
-          <>
+        {posts.slice(0, 6).map((post) => (
           <InstaCard
             key={post.id}
             username={post.username}
@@ -96,7 +93,6 @@ const InstaPosts = () => {
             img={post.media_url}
             link={post.permalink}
           />
-          </>
         ))}
       </div>
     </div>

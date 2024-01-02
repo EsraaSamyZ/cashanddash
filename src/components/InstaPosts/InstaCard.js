@@ -7,7 +7,7 @@ import Quotes from "../../images/svg/quotes.inline.svg"
 
 const InstaCard = ({ 
   username, 
-  caption = "The leading local buyer of vehichles in the central coast area!", // Default caption
+  caption = "The leading local buyer of vehichles in the central coast area!",
   date, 
   img, 
   link 
@@ -33,7 +33,7 @@ const InstaCard = ({
             </div>
             <Save />
           </div>
-          <div className="flex">
+          <div className="flex flex-row">
             <Quotes className="m-1" />
             <div className="space-y-3">
               <p className="text-xs md:text-base line-clamp-2">{caption}</p>

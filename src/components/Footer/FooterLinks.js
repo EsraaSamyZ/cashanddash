@@ -31,8 +31,9 @@ const FooterLinks = () => {
                                 <li className='mb-3'>Home</li>
                                 <li className='mb-3'>How It Works</li>
                                 <li className='mb-3'>Reviews</li>
+                                <li className='mb-3'><a href='/aboutus'>About Us</a></li>
                                 <li className='mb-3'>FAQs</li>
-                                <li className='mb-3'>Contact Us in Santa Maria, CA</li>
+                                <li className='mb-3'><ContactUsBtn /> in Santa Maria, CA</li>
                             </ul>
                         </div>
                     </div>
@@ -87,13 +88,12 @@ const FooterLinks = () => {
                         <div className={`${openSection === 'talktous' ? '' : 'hidden'} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Talk To Us</h3>
                             <div className="pl-6 lg:pl-0 lg:text-xl">
-                                <p className='mb-3'>1921 N Broadway Suite A, Santa Maria, CA 93459</p>
-                                <p className='mb-3'>Info@805cashanddash.com</p>
-                                {/* <p className='mb-3'>(805) XXX-XXXX</p> */}
+                                <p className='mb-3'><a href="https://maps.google.com/?saddr=Current Location&daddr=1921 N Broadway a, Santa Maria, CA 93454, USA">1921 N Broadway Suite A, Santa Maria, CA 93459</a></p>
+                                <p className='mb-3'><a href="mailto:Info@805cashanddash.com">Info@805cashanddash.com</a></p>
+                                {/* <p className='mb-3'><a href="tel:+xxxxxxxxxx">(805) XXX-XXXX</a></p> */}
                                 <ContactUsBtn className={'mb-3 block'} />
-                                {/* <a href="#" className='mb-3 block'>Contact Us</a> */}
-                                <a href="#" className='mb-3 block'>Facebook</a>
-                                <a href="#" className='mb-3 block'>Instagram</a>
+                                <a href="https://www.fb.com/805cashndash/" className='mb-3 block'>Facebook</a>
+                                <a href="https://www.instagram.com/805cashndash/" className='mb-3 block'>Instagram</a>
                             </div>
                         </div>
                     </div>

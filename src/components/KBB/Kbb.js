@@ -6,7 +6,6 @@ import sectionShape from '../../images/svg/shape.svg'
 const Kbb = () => {
     return (
         <>
-            {/* <div className="w-4/5 mx-auto flex flex-col-reverse md:flex md:items-center md:justify-between pt-36 md:pt-56 md:pb-24 pb-8 md:space-x-32 space-y-8 md:space-y-0"> */}
             <div className="w-4/5 mx-auto py-12 flex flex-col-reverse md:flex-row md:items-center md:justify-between pt-36">
                 <Form className=""/>
                 <KbbText className=""/>

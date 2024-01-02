@@ -35,4 +35,26 @@ export const getPosts = async () => {
     }
 };
 
+export const submitInitialForm = (formData) => {
+    return axios.post('https://vintrackers.buildonlinestaging.com/api/v1/ico-lead', {
+        lead_name: formData.name,
+        phone_number: formData.phone,
+        email: formData.email,
+        appointment: formData.appointment
+    });
+};
+
+export const submitFinalForm = (formData) => {
+    return axios.post('https://vintrackers.buildonlinestaging.com/api/v1/ico-lead-step-2', {
+        car_make: formData.carMake,
+        car_year: formData.carYear,
+        car_mileage: formData.carMileage,
+        car_model: formData.carModel,
+        otp: formData.otp
+    });
+};
+
+
+
+
 

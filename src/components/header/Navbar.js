@@ -74,7 +74,7 @@ const Navbar = () => {
     closeMenu();
   };
 
-  const navbarClasses = `bg-dark-gray text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${isTop ? "bg-transparent" : ""}`;
+  const navbarClasses = `bg-dark-gray text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${location.pathname === '/' && isTop ? "bg-transparent" : ""}`;
 
   return (
     <nav className={navbarClasses}>
@@ -134,7 +134,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/blog"
+                to="/blogs"
                 className="block py-2 px-3 text-royal-blue rounded"
               >
                 Blog
@@ -203,7 +203,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  to="/blogs"
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-royal-blue md:p-0"
                 >
                   Blog

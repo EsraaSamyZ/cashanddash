@@ -14,7 +14,7 @@ const InstaCard = ({
 }) => {
 
   return (
-    <div className="bg-light-gray bg-opacity-50 md:bg-white rounded-2xl border overflow-hidden mx-12 md:m-0 p-2.5 space-y-3 text-left md:shadow-custom">
+    <div className="bg-white rounded-2xl border overflow-hidden mx-12 md:m-0 p-2.5 space-y-3 text-left shadow-custom">
       <a href={link}>
         <img
           className="aspect-square object-cover rounded-2xl mx-auto border md:border-0"

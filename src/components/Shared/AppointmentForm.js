@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import FloatingLabelInput from './FloatingLabelInput';
-import { submitInitialForm, submitFinalForm } from './Api';
+import React, { useState } from "react";
+import FloatingLabelInput from "./FloatingLabelInput";
+import { submitInitialForm, submitFinalForm } from "./Api";
 
 const AppointmentForm = ({ setShowForm }) => {
     const [thankMsg, setThankMsg] = useState(false)
@@ -15,7 +15,8 @@ const AppointmentForm = ({ setShowForm }) => {
         model: '',
         year: '',
         mileage: '',
-        appointment: ''
+        appointment: '',
+        otp: ''
     });
 
     const handleChange = (e) => {
@@ -24,19 +25,19 @@ const AppointmentForm = ({ setShowForm }) => {
 
     const validateNext = (values) => {
         const errors = {};
-        if (!values.name) errors.name = 'Name is required';
-        if (!values.phone) errors.phone = 'Phone number is required';
-        if (!values.email) errors.email = 'Email is required';
-        if (!values.appointment) errors.appointment = 'Appointment error';
+        if (!values.name) errors.name = "Name is required";
+        if (!values.phone) errors.phone = "Phone number is required";
+        if (!values.email) errors.email = "Email is required";
+        if (!values.appointment) errors.appointment = "Appointment error";
         return errors;
     };
 
     const validateSubmit = (values) => {
         const errors = {};
-        if (!values.make) errors.make = 'Car make is required';
-        if (!values.model) errors.model = 'Car model is required';
-        if (!values.year) errors.year = 'Car year is required';
-        if (!values.mileage) errors.mileage = 'Mileage is required';
+        if (!values.make) errors.make = "Car make is required";
+        if (!values.model) errors.model = "Car model is required";
+        if (!values.year) errors.year = "Car year is required";
+        if (!values.mileage) errors.mileage = "Mileage is required";
         return errors;
     };
 
@@ -53,7 +54,7 @@ const AppointmentForm = ({ setShowForm }) => {
                     setShowAdditionalFields(true);
                 })
                 .catch(error => {
-                    console.error('Error during API call:', error);
+                    console.error("Error during API call:", error);
                 });
         }
     };
@@ -70,7 +71,7 @@ const AppointmentForm = ({ setShowForm }) => {
                     setThankMsg(true);
                 })
                 .catch(error => {
-                    console.error('Error during API call:', error);
+                    console.error("Error during API call:", error);
                 });
         }
     };
@@ -83,7 +84,7 @@ return (
                 <>
                     <h3 className="text-black text-center text-lg font-bold mb-4">Schedule Appointment</h3>
                     <form onSubmit={showAdditionalFields ? handleSubmit : handleNext} className="max-w-md mx-auto">
-                        <div className={showAdditionalFields ? 'hidden' : 'block'}>
+                        <div className={showAdditionalFields ? "hidden" : "block"}>
                             <FloatingLabelInput
                                 type="text"
                                 label="Name"
@@ -164,7 +165,7 @@ return (
 
                         {/* Submit/Next Button */}
                         <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded mt-4 transition duration-300 ease-in-out">
-                            {showAdditionalFields ? 'Submit' : 'Next'}
+                            {showAdditionalFields ? "Submit" : "Next"}
                         </button>
                     </form>
                 </>

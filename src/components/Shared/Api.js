@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 // Function to check VIN
 export const checkVIN = async (vin) => {
@@ -7,7 +7,7 @@ export const checkVIN = async (vin) => {
         console.log(response.data)
         return response.data; 
     } catch (error) {
-        console.error('Error in checkVIN:', error);
+        console.error("Error in checkVIN:", error);
         throw error;
     }
 };
@@ -18,7 +18,7 @@ export const checkPlate = async (plate, stateCode) => {
         const response = await axios.get(`http://localhost:9000/check_plate?plate=${plate}&statecode=${stateCode}`);
         return response.data;
     } catch (error) {
-        console.error('Error in checkPlate:', error);
+        console.error("Error in checkPlate:", error);
         throw error;
     }
 };
@@ -30,13 +30,13 @@ export const getPosts = async () => {
         // console.log(response.data.data)
         return response.data.data;
     } catch (error) {
-        console.error('Error in instaApi:', error);
+        console.error("Error in instaApi:", error);
         throw error;
     }
 };
 
 export const submitInitialForm = (formData) => {
-    return axios.post('https://vintrackers.buildonlinestaging.com/api/v1/ico-lead', {
+    return axios.post("https://vintrackers.buildonlinestaging.com/api/v1/ico-lead", {
         lead_name: formData.name,
         phone_number: formData.phone,
         email: formData.email,
@@ -45,7 +45,7 @@ export const submitInitialForm = (formData) => {
 };
 
 export const submitFinalForm = (formData) => {
-    return axios.post('https://vintrackers.buildonlinestaging.com/api/v1/ico-lead-step-2', {
+    return axios.post("https://vintrackers.buildonlinestaging.com/api/v1/ico-lead-step-2", {
         car_make: formData.carMake,
         car_year: formData.carYear,
         car_mileage: formData.carMileage,

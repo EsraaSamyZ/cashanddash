@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import IconOpen from '../../images/svg/one.inline.svg'
-import IconCollapsed from '../../images/svg/two.inline.svg'
+import IconOpen from "../../images/svg/one.inline.svg"
+import IconCollapsed from "../../images/svg/two.inline.svg"
 
 const FaqSection = ({ accordionData, toggleItem, openItem }) => {
     return (
@@ -10,22 +10,22 @@ const FaqSection = ({ accordionData, toggleItem, openItem }) => {
                 <div key={index} className="rounded-none border border-l-0 border-r-0 border-t-0 border-neutral-200 bg-white transition duration-300 ease-in-out">
                     <h2 className="mb-0" id={`flush-heading${index}`}>
                         <button
-                            className={`group relative flex w-full justify-between items-center rounded-none border-0 bg-white px-5 py-5 text-left text-lg md:text-xl transition-colors duration-300 ease-in-out ${openItem === index ? 'text-royal-blue' : 'text-neutral-800'}`}
+                            className={`group relative flex w-full justify-between items-center rounded-none border-0 bg-white px-5 py-5 text-left text-lg md:text-xl transition-colors duration-300 ease-in-out ${openItem === index ? "text-royal-blue" : "text-neutral-800"}`}
                             type="button"
                             onClick={() => toggleItem(index)}
                             aria-expanded={openItem === index}
                             aria-controls={`flush-collapse${index}`}
                         >
                             <span>{item.title}</span>
-                            <span className='ml-2'>{openItem === index ? <IconOpen /> : <IconCollapsed />}</span>
+                            <span className="ml-2">{openItem === index ? <IconOpen /> : <IconCollapsed />}</span>
                         </button>
                     </h2>
                     <div
                         id={`flush-collapse${index}`}
-                        className={`transition-height duration-800 ease-in-out ${openItem === index ? 'visible' : 'hidden'} border-0`}
+                        className={`transition-height duration-800 ease-in-out ${openItem === index ? "visible" : "hidden"} border-0`}
                         aria-labelledby={`flush-heading${index}`}
                     >
-                        <div className="px-5 py-4 text-left text-sm md:text-base" style={{ whiteSpace: 'pre-line' }}>
+                        <div className="px-5 py-4 text-left text-sm md:text-base" style={{ whiteSpace: "pre-line" }}>
                             {item.content}
                         </div>
                     </div>
@@ -79,9 +79,9 @@ const FAQs = () => {
     ];
 
     return (
-        <div id='faqs' className='w-4/5 mx-auto text-center space-y-9 pb-9'>
-            <h2 className='text-black text-3xl md:text-5xl font-extrabold mx-auto'>Frequently Asked <span className='text-deep-crimson'>Questions</span></h2>
-            <div className='lg:w-1/2 mx-auto'>
+        <div id="faqs" className="w-4/5 mx-auto text-center space-y-9 pb-9">
+            <h2 className="text-black text-3xl md:text-5xl font-extrabold mx-auto">Frequently Asked <span className="text-deep-crimson">Questions</span></h2>
+            <div className="lg:w-1/2 mx-auto">
                 <FaqSection accordionData={accordionData} toggleItem={toggleItem} openItem={openItem} />
             </div>
         </div>

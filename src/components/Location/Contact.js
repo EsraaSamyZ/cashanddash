@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import EmailIcon from "../../images/svg/emailIcon.inline.svg"
 import MapIcon from "../../images/svg/maps.inline.svg"
 
 const Contact = () => {
   return (
-    <div className='flex flex-col text-left lg:items-center lg:justify-center text-lg'>
+    <div className="flex flex-col text-left lg:items-center lg:justify-center text-lg">
 
         <div>
           <a href="https://maps.google.com/?saddr=Current Location&daddr=1921 N Broadway Suite A, Santa Maria, CA 93459" target="_blank" rel="noopener noreferrer" className="flex items-center cursor-pointer mt-4" aria-label="Link with map">

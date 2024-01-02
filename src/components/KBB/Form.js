@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ArrowIcon from "../../images/svg/GetOfferBtn.inline.svg"
-import VinOverlay from './VinOverlay';
-import { checkVIN, checkPlate } from '../Shared/Api';
+import VinOverlay from "./VinOverlay";
+import { checkVIN, checkPlate } from "../Shared/Api";
 
 const Form = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
@@ -46,7 +46,7 @@ const handleSubmit = async (e) => {
       window.location.href = result.results;
     }
   } catch (error) {
-    console.error('There was a problem with the API call:', error);
+    console.error("There was a problem with the API call:", error);
     // setErrors({ apiError: error.message });
   }
 };

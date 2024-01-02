@@ -1,9 +1,9 @@
-import React from 'react'
-import Wereisphoto from '../../images/svg/whereismyVIN.inline.svg'
+import React from "react"
+import Wereisphoto from "../../images/svg/whereismyVIN.inline.svg"
 
 const VinOverlay = ({ setIsOverlayVisible }) => {
-    if (typeof setIsOverlayVisible !== 'function') {
-        console.error('setIsOverlayVisible must be a function');
+    if (typeof setIsOverlayVisible !== "function") {
+        // console.error("setIsOverlayVisible must be a function");
         return null;
     }
     return (

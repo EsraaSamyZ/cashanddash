@@ -46,7 +46,7 @@ const Navbar = () => {
   };
 
   const handleNavLinkClick = (e, targetId) => {
-    if (location.pathname === '/' && targetId) {
+    if (location.pathname === "/" && targetId) {
       e.preventDefault();
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
@@ -57,7 +57,7 @@ const Navbar = () => {
           behavior: "smooth"
         });
       }
-    } else if (location.pathname === '/' && !targetId) {
+    } else if (location.pathname === "/" && !targetId) {
       e.preventDefault();
       window.scrollTo({
         top: 0,
@@ -74,7 +74,7 @@ const Navbar = () => {
     closeMenu();
   };
 
-  const navbarClasses = `bg-dark-gray text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${location.pathname === '/' && isTop ? "bg-transparent" : ""}`;
+  const navbarClasses = `bg-dark-gray text-white fixed w-full z-20 top-0 start-0 border-b border-dark-gray ${location.pathname === "/" && isTop ? "bg-transparent" : ""}`;
 
   return (
     <nav className={navbarClasses}>
@@ -110,7 +110,7 @@ const Navbar = () => {
                 to="/"
                 onClick={(e) => handleNavLinkClick(e)}
                 className="block py-2 px-3 text-royal-blue rounded"
-                aria-current={location.pathname === '/' ? 'page' : undefined}
+                aria-current={location.pathname === "/" ? "page" : undefined}
               >
                 Home
               </Link>
@@ -178,7 +178,7 @@ const Navbar = () => {
                   to="/"
                   onClick={(e) => handleNavLinkClick(e)}
                   className="block py-2 px-3 text-white bg-royal-blue rounded md:bg-transparent md:text-royal-blue md:p-0"
-                  aria-current={location.pathname === '/' ? 'page' : undefined}
+                  aria-current={location.pathname === "/" ? "page" : undefined}
                 >
                   Home
                 </Link>
@@ -188,7 +188,7 @@ const Navbar = () => {
                   to="/"
                   onClick={(e) => handleNavLinkClick(e, "faqs")}
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-royal-blue md:p-0"
-                  aria-current={location.pathname === '/' ? 'page' : undefined}
+                  aria-current={location.pathname === "/" ? "page" : undefined}
                 >
                   FAQs
                 </Link>

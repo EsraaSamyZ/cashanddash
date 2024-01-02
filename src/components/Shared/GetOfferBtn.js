@@ -3,7 +3,7 @@ import ArrowIcon from "../../images/svg/GetOfferBtn.inline.svg"
 
 const GetOfferBtn = () => {
     const handleClick = () => {
-        window.location.href = 'https://www.kbb.com/instant-cash-offer/W/69724927/43A6F9B8-DB6C-48C0-A360-F658B2176E3E/';
+        window.location.href = "https://www.kbb.com/instant-cash-offer/W/69724927/43A6F9B8-DB6C-48C0-A360-F658B2176E3E/";
     };
 
   return (

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fontsource/nunito-sans": "^5.0.8",
     "gatsby": "^5.12.4",
     "gatsby-plugin-ffmpeg": "^0.6.4",
     "gatsby-plugin-image": "^3.12.0",

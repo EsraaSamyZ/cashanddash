@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Map from "./Map"
 import Contact from "./Contact"
 

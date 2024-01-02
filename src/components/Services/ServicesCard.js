@@ -7,7 +7,7 @@ const ServicesCard = ({ icon: Icon, title, description }) => {
 
             <div className="text-left space-y-3">
                 <h4 className="font-semibold text-md lg:text-2xl">{title}</h4>
-                <p className="text-sm lg:text-base">{description}</p>
+                <p className="text-base lg:text-lg">{description}</p>
             </div>
         </div>
     );

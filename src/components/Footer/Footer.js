@@ -15,7 +15,7 @@ const Footer = () => {
         src={FooterSection_}
         className="md:hidden block -mb-[1px]"
         style={{ width: "100%" }}
-        alt="Services Section Responsive"
+        alt="Services Section"
       />
       <img
         src={FooterSection}
@@ -56,8 +56,8 @@ const Footer = () => {
               CashandDash is your go-to destination for buying and selling cars.
             </p>
             <div className="flex space-x-3 justify-center mx-auto">
-              <a href="https://www.fb.com/805cashndash/"><FbLogo /></a>
-              <a href="https://www.instagram.com/805cashndash/"><InstaLogo /></a>
+              <a href="https://www.fb.com/805cashndash/" aria-label="Facebook"><FbLogo /></a>
+              <a href="https://www.instagram.com/805cashndash/" aria-label="Instagram"><InstaLogo /></a>
             </div>
           </div>
 

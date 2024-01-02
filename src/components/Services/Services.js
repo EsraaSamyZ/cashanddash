@@ -32,7 +32,7 @@ const Services = () => {
 
     return (
         <div className="my-9 bg-light-gray">
-            <img src={ServicesSection} className="-mb-[1px]" style={{ width: "100%" }} />
+            <img alt="shape" src={ServicesSection} className="-mb-[1px]" style={{ width: "100%" }} />
 
             <div className="w-4/5 mx-auto space-y-9 text-center py-9">
                 <h2 className="text-black text-2xl md:text-5xl font-extrabold md:w-4/5 mx-auto">Complimentary <span className="text-deep-crimson">Services</span> When You Sell Your Car to 805 Cash & Dash</h2>
@@ -44,7 +44,7 @@ const Services = () => {
                     ))}
                 </div>
             </div>
-            <img src={ServicesSection} className="transform rotate-180 -mt-[1px]" style={{ width: "100%" }} />
+            <img alt="shape" src={ServicesSection} className="transform rotate-180 -mt-[1px]" style={{ width: "100%" }} />
         </div>
     );
 };

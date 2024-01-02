@@ -25,7 +25,7 @@ const FaqSection = ({ accordionData, toggleItem, openItem }) => {
                         className={`transition-height duration-800 ease-in-out ${openItem === index ? "visible" : "hidden"} border-0`}
                         aria-labelledby={`flush-heading${index}`}
                     >
-                        <div className="px-5 py-4 text-left text-sm md:text-base" style={{ whiteSpace: "pre-line" }}>
+                        <div className="px-5 py-4 text-left text-base md:text-lg" style={{ whiteSpace: "pre-line" }}>
                             {item.content}
                         </div>
                     </div>

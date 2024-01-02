@@ -7,11 +7,33 @@ const VinOverlay = ({ setIsOverlayVisible }) => {
         return null;
     }
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center" onClick={() => setIsOverlayVisible(false)}>
-            <div className="bg-white p-4 rounded-md" onClick={e => e.stopPropagation()}>
-                <Wereisphoto className="w-full"/>
+        <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
+            onClick={() => setIsOverlayVisible(false)}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    setIsOverlayVisible(false);
+                }
+            }}
+            role="button"
+            tabIndex="0"
+            aria-label="Close overlay"
+        >
+            <div
+                className="bg-white p-4 rounded-md"
+                onClick={e => e.stopPropagation()}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.stopPropagation();
+                        // Additional logic for keyboard interaction
+                    }
+                }}
+                role="button" // or role="link" if it acts as a link
+                tabIndex="0"
+            >
+                <Wereisphoto className="w-full" />
             </div>
-        </div>
+        </div >
     );
 };
 

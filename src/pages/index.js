@@ -16,7 +16,7 @@ import bg from '../images/bg-kbb.png'
 const Kbb = React.lazy(() => import("../components/KBB/Kbb"));
 const Howto = React.lazy(() => import("../components/Howto/Howto"));
 const InstaPosts = React.lazy(() => import("../components/InstaPosts/InstaPosts"));
-const SellersReviews = React.lazy(() => import("../components/SellersReviews/SellersReviews"));
+// const SellersReviews = React.lazy(() => import("../components/SellersReviews/SellersReviews"));
 const Services = React.lazy(() => import("../components/Services/Services"));
 const FAQs = React.lazy(() => import("../components/FAQs/FAQs"));
 
@@ -33,7 +33,7 @@ const loader = () => (
   </div>
 )
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+// const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = () => {
   const heroRef = useRef(null);
@@ -60,19 +60,22 @@ const IndexPage = () => {
       updateLayout();
     });
 
-    if (heroRef.current) {
-      resizeObserver.observe(heroRef.current);
+    const currentHero = heroRef.current;
+    const currentKbb = kbbRef.current;
+
+    if (currentHero) {
+      resizeObserver.observe(currentHero);
     }
-    if (kbbRef.current) {
-      resizeObserver.observe(kbbRef.current);
+    if (currentKbb) {
+      resizeObserver.observe(currentKbb);
     }
 
     return () => {
-      if (heroRef.current) {
-        resizeObserver.unobserve(heroRef.current);
+      if (currentHero) {
+        resizeObserver.unobserve(currentHero);
       }
-      if (kbbRef.current) {
-        resizeObserver.unobserve(kbbRef.current);
+      if (currentKbb) {
+        resizeObserver.unobserve(currentKbb);
       }
     };
   }, []);

@@ -10,7 +10,7 @@ const Kbb = () => {
                 <Form className=""/>
                 <KbbText className=""/>
             </div>
-            <img src={sectionShape} className="transform rotate-180 -mb-[1px]" style={{ width: "100%" }} />
+            <img alt="shape" src={sectionShape} className="transform rotate-180 -mb-[1px]" style={{ width: "100%" }} />
         </>
     );
 };

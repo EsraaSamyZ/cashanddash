@@ -19,11 +19,11 @@ const InstaCard = ({
         <img
           className="aspect-square object-cover rounded-2xl mx-auto border md:border-0"
           src={img}
-          alt="Card Image"
+          alt={caption}
         />
         <div className="space-y-3 px-2">
           <h2 className="text-sm md:text-base text-gray-800">
-            Liked by <span className="font-semibold">{username}</span>
+            {/* Liked by <span className="font-semibold">{username}</span> */}
           </h2>
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center space-x-4">
@@ -34,7 +34,9 @@ const InstaCard = ({
             <Save />
           </div>
           <div className="flex flex-row">
+            <div className="w-8">
             <Quotes className="m-1" />
+            </div>
             <div className="space-y-3">
               <p className="text-xs md:text-base line-clamp-2">{caption}</p>
               <p className="text-xs md:text-sm text-gray-600">{date}</p>

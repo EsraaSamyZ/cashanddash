@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 const ArrowIcon = () => (
   <svg
@@ -22,7 +22,7 @@ const ArrowIcon = () => (
 const Appointment = ({ setShowForm }) => {
 
   return (
-    <div className="lg:w-2/5 bg-gray-200 p-2 lg:p-4 rounded-2xl">
+    <div className="bg-gray-200 p-2 lg:p-4 rounded-2xl">
       <div className="bg-dark-blue p-8 lg:p-16 space-y-8 rounded-2xl h-full">
         <ol className="relative text-gray-200 border-s border-white">
           <li className="mb-4 ms-8 text-left">
@@ -30,7 +30,7 @@ const Appointment = ({ setShowForm }) => {
             <h3 className="font-bold text-base md:text-xl mb-2">
               Get Your KBB ICO Offer
             </h3>
-            <p className="text-sm md:text-md">
+            <p className="text-sm md:text-base">
               Submit your vehicles info in the tool above.
             </p>
           </li>
@@ -39,7 +39,7 @@ const Appointment = ({ setShowForm }) => {
             <h3 className="font-bold text-base md:text-xl mb-2">
               Receive our Cash & Dash Offer
             </h3>
-            <p className="text-sm md:text-md">
+            <p className="text-sm md:text-base">
               Within 24 hours, will contact with our Cash & Dash offer!
             </p>
           </li>
@@ -48,7 +48,7 @@ const Appointment = ({ setShowForm }) => {
             <h3 className="font-bold text-base md:text-xl mb-2">
               Make an appointment.
             </h3>
-            <p className="text-sm md:text-md">
+            <p className="text-sm md:text-base">
               Click the appointment button or wait for a call from us to
               schedule your appointment.
             </p>
@@ -58,7 +58,7 @@ const Appointment = ({ setShowForm }) => {
             <h3 className="font-bold text-base md:text-xl mb-2">
               Drive In, Cash Out!
             </h3>
-            <p className="text-sm md:text-md">Get paid today</p>
+            <p className="text-sm md:text-base">Get paid today</p>
           </li>
         </ol>
 

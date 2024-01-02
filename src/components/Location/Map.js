@@ -10,6 +10,7 @@ const Map = () => {
     allowFullScreen
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
+    title="Google Maps Location of cash&dash"
   ></iframe>
   )
 }

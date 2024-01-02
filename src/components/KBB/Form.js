@@ -71,12 +71,12 @@ const handleSubmit = async (e) => {
         <h2 className="text-3xl font-bold text-black">
           Tell Us About Your Car
         </h2>
-        <p className="text-sm  text-gray-800">
+        <p className="text-sm text-gray-800">
           Your License Plate or VIN helps us fill in key details about your
           vehicle and ensures a more accurate offer.
         </p>
 
-        <div className="text-lg flex flex-col w-fit mx-auto space-y-3 md:space-y-0 md:w-full md:flex-row md:justify-evenly md:text-center">
+        <div className="text-xl flex flex-col w-fit mx-auto space-y-3 md:space-y-0 md:w-full md:flex-row md:justify-evenly md:text-center">
           <button
             className={isActive("licensePlate")}
             onClick={() => setActiveSection("licensePlate")}
@@ -216,9 +216,9 @@ const handleSubmit = async (e) => {
                 )}
                 <div>
                   <p className="text-sm text-royal-blue">
-                    <a className="cursor-pointer p-2" onClick={toggleOverlay}>
+                    <button className="cursor-pointer p-2" onClick={toggleOverlay}>
                       Where is my VIN?
-                    </a>
+                    </button>
                   </p>
                   {isOverlayVisible && <VinOverlay setIsOverlayVisible={setIsOverlayVisible} />}
                 </div>

@@ -9,13 +9,13 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `805CashAndDash`,
+    description: `Revolutionizing the car selling experience on the Central Coast! Serving San Luis and Santa Barbara Counties with pride and dedication, we bring a hassle-free, transparent, and efficient way to convert your vehicle into instant cash.`,
+    author: `@805CashAndDash`,
+    siteUrl: `https://805CashAndDash.com/`,
   },
   plugins: [
-    `gatsby-plugin-react-iframe`,
+    // 'gatsby-plugin-react-iframe',
     // `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -48,6 +48,6 @@ module.exports = {
         }
       }
     },
-    `gatsby-transformer-ffmpeg`,
+    // `gatsby-transformer-ffmpeg`,
   ],
 }

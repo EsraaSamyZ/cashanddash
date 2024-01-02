@@ -51,10 +51,10 @@ const HeroComponent = () => {
             </div>
 
             <div className="w-4/5 mx-auto animate-fade-up animate-duration-1000 animate-delay-300">
-                <div className="text-center md:text-left py-32 lg:w-1/2 space-y-6 md:py-64">
-                    <h2 className="text-white text-3xl md:text-4xl font-bold">Sell Your Car Today!</h2>
-                    <h1 className="text-white text-5xl md:text-6xl font-bold">Get More than Just an “Instant Cash Offer”</h1>
-                    <h2 className="text-royal-blue text-3xl md:text-4xl font-bold">Drive In, Cash Out!</h2>
+                <div className="text-center md:text-left py-32 lg:w-1/2 space-y-4 md:space-y-6 md:py-64">
+                    <h2 className="text-white text-2xl md:text-4xl font-bold">Sell Your Car Today!</h2>
+                    <h1 className="text-white text-3xl md:text-6xl font-bold">Get More than Just an “Instant Cash Offer”</h1>
+                    <h2 className="text-royal-blue text-2xl md:text-4xl font-bold">Drive In, Cash Out!</h2>
                     <GetOfferBtn />
                 </div>
             </div>

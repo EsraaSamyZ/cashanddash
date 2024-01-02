@@ -21,7 +21,7 @@ const Howto = () => {
 
                 </div>
             </div>
-            <img src={sectionShape} className="-mt-[1px]" style={{ width: "100%" }} />
+            <img alt="shape" src={sectionShape} className="-mt-[1px]" style={{ width: "100%" }} />
 
             {showForm && <AppointmentForm setShowForm={setShowForm} />}
         </>

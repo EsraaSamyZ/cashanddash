@@ -13,7 +13,7 @@ const ReviewCard = () => {
 
             <div className="flex items-center justify-between">
 
-                <img className="w-8 h-8 object-cover rounded-full" src={img} alt="Card Image" />
+                <img className="w-8 h-8 object-cover rounded-full" src={img} alt="Reviw Card" />
                 <div className="w-28">
                     <h2 className="text-md text-gray-800 font-semibold">{name}</h2>
                     <p className="text-xs text-gray-600">{city}</p>

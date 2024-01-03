@@ -4,9 +4,10 @@ import KbbText from "./KbbText"
 import sectionShape from "../../images/svg/shape.svg"
 
 const Kbb = () => {
+    
     return (
         <>
-            <div className="w-4/5 mx-auto py-12 flex flex-col-reverse md:flex-row md:items-center md:justify-between pt-36">
+            <div className="w-4/5 mx-auto py-12 flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between pt-32 md:pt-56">
                 <Form className=""/>
                 <KbbText className=""/>
             </div>

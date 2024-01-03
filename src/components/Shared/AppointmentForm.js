@@ -77,7 +77,6 @@ const AppointmentForm = ({ setShowForm }) => {
     };
 
     return (
-        // <div className="fixed inset-0 top-0 right-0 bg-black bg-opacity-50 z-50 flex justify-center items-center" onClick={() => setShowForm(false)}>
         <div
             className="fixed inset-0 top-0 right-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
             onClick={() => setShowForm(false)}
@@ -90,7 +89,6 @@ const AppointmentForm = ({ setShowForm }) => {
             tabIndex="0"
         >
 
-            {/* <div className="bg-white p-6 rounded-lg shadow-lg max-w-md md:w-full text-black" onClick={e => e.stopPropagation()}> */}
             <div
                 className="bg-white p-6 rounded-lg shadow-lg max-w-md md:w-full text-black"
                 onClick={e => e.stopPropagation()}

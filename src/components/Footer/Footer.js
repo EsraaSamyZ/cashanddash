@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           <div className="md:space-x-3 md:space-y-0 space-y-3 flex flex-col md:flex-row justify-center items-center">
-            <ContactUsBtn className={"text-xl text-dark-gray bg-white border border-dark-gray hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-md text-sm px-8 py-3 text-center  w-52"} />
+            <ContactUsBtn className={"text-xl text-dark-gray bg-white border border-dark-gray hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold rounded-md text-sm px-8 py-3 text-center w-56"} />
             <GetOfferBtn />
           </div>
         </div>

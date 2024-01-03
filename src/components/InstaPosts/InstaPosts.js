@@ -37,16 +37,16 @@ const InstaPosts = () => {
 
   return (
     <div className="items-center text-center w-4/5 mx-auto space-y-9">
-      <h2 className="text-black text-3xl md:text-5xl font-extrabold">
+      <h2 className="text-black text-3xl md:text-5xl font-extrabold animate-fade animate-duration-1000 animate-delay-300">
         Our Latest <span className="text-deep-crimson">Dashers</span>
       </h2>
-      <p className="text-base md:text-2xl w-4/5 mx-auto">
+      <p className="text-base md:text-2xl w-4/5 mx-auto animate-fade animate-duration-1000 animate-delay-300">
         Whether you're in Ventura County, Santa Barbara County, or San Luis
         Obispo County, we've got you covered.
       </p>
 
       {/* slider view */}
-      <div className="md:hidden relative">
+      <div className="md:hidden relative animate-fade-up animate-duration-1000 animate-delay-300">
         <div className="overflow-hidden">
           <div className="flex transition-transform duration-300" id="slider">
             {posts.map((post) => (
@@ -83,7 +83,7 @@ const InstaPosts = () => {
       </div>
 
       {/* md view */}
-      <div className="hidden md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-3">
+      <div className="hidden md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-3 animate-fade-up animate-duration-1000 animate-delay-300">
         {posts.slice(0, 6).map((post) => (
             <InstaCard
               key={post.id}

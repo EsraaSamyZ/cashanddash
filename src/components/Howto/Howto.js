@@ -12,7 +12,7 @@ const Howto = () => {
         <>
             <div className="bg-midnight-blue items-center text-center">
                 <div className="w-4/5 mx-auto">
-                    <h2 className=" text-white text-3xl md:text-5xl font-extrabold font-extrabold">How to <span className="text-deep-crimson">CASH & DASH</span></h2>
+                    <h2 className=" text-white text-3xl md:text-5xl font-extrabold font-extrabold animate-fade-up animate-duration-1000 animate-delay-300">How to <span className="text-deep-crimson">CASH & DASH</span></h2>
 
                     <div className="py-12 flex flex-col-reverse lg:flex-row lg:items-stretch lg:justify-center">
                             <Appointment setShowForm={setShowForm} />

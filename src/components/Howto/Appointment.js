@@ -22,7 +22,7 @@ const ArrowIcon = () => (
 const Appointment = ({ setShowForm }) => {
 
   return (
-    <div className="bg-gray-200 p-2 lg:p-4 rounded-2xl">
+    <div className="bg-gray-200 p-2 lg:p-4 rounded-2xl animate-fade-up animate-duration-1000 animate-delay-250">
       <div className="bg-dark-blue p-8 lg:p-16 space-y-8 rounded-2xl h-full">
         <ol className="relative text-gray-200 border-s border-white">
           <li className="mb-4 ms-8 text-left">

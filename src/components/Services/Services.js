@@ -35,10 +35,10 @@ const Services = () => {
             <img alt="shape" src={ServicesSection} className="-mb-[1px]" style={{ width: "100%" }} />
 
             <div className="w-4/5 mx-auto space-y-9 text-center py-9">
-                <h2 className="text-black text-2xl md:text-5xl font-extrabold md:w-4/5 mx-auto">Complimentary <span className="text-deep-crimson">Services</span> When You Sell Your Car to 805 Cash & Dash</h2>
-                <p className=" text-lg md:text-2xl md:w-4/5 mx-auto">Searching for your dream car has never been easier. Here's what you can expect when you use our platform to buy a car</p>
+                <h2 className="text-black text-2xl md:text-5xl font-extrabold md:w-4/5 mx-auto animate-fade-up animate-duration-1000 animate-delay-300">Complimentary <span className="text-deep-crimson">Services</span> When You Sell Your Car to 805 Cash & Dash</h2>
+                <p className=" text-lg md:text-2xl md:w-4/5 mx-auto animate-fade-up animate-duration-1000 animate-delay-300">Searching for your dream car has never been easier. Here's what you can expect when you use our platform to buy a car</p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-up animate-duration-1000 animate-delay-500">
                     {servicesData.map((service, index) => (
                         <ServicesCard key={index} icon={service.icon} title={service.title} description={service.description} />
                     ))}

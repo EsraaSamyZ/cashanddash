@@ -65,7 +65,7 @@ const AppointmentForm = ({ setShowForm }) => {
         setFormErrors(errors);
 
         if (Object.keys(errors).length === 0) {
-            console.log("Form data submitted:", formData);
+            console.log("FinalForm data submitted:", formData);
             submitFinalForm(formData)
                 .then(response => {
                     setThankMsg(true);

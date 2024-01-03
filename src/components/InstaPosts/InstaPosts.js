@@ -85,7 +85,6 @@ const InstaPosts = () => {
       {/* md view */}
       <div className="hidden md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-3">
         {posts.slice(0, 6).map((post) => (
-          <>
             <InstaCard
               key={post.id}
               username={post.username}
@@ -94,23 +93,6 @@ const InstaPosts = () => {
               img={post.media_url}
               link={post.permalink}
             />
-            <InstaCard
-              key={post.id}
-              username={post.username}
-              caption={post.caption}
-              date={new Date(post.timestamp).toLocaleDateString()}
-              img={post.media_url}
-              link={post.permalink}
-            />
-            <InstaCard
-              key={post.id}
-              username={post.username}
-              caption={post.caption}
-              date={new Date(post.timestamp).toLocaleDateString()}
-              img={post.media_url}
-              link={post.permalink}
-            />
-          </>
         ))}
       </div>
     </div>

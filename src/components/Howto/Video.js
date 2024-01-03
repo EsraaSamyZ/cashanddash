@@ -1,5 +1,5 @@
 import React from "react"
-import vi from "../../images/Video.png"
+import vi from "../../images/Video.webp"
 
 const Video = () => {
   return (

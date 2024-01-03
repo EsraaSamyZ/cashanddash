@@ -20,7 +20,6 @@ function Seo({ description, title, location, children }) {
   const defaultTitle = site.siteMetadata?.title
   const siteUrl = site.siteMetadata?.url
 
-  // Additional meta tags for enhanced SEO
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -31,10 +30,10 @@ function Seo({ description, title, location, children }) {
       "addressRegion": "CA"
     },
     "url": siteUrl,
-    // "telephone": "YOUR_BUSINESS_PHONE_NUMBER"
+    // "telephone": "BUSINESS_PHONE_NUMBER"
   }
 
-  const fullTitle = title ? `${title} - 805CashAndDash.com` : defaultTitle;
+  // const fullTitle = title ? `${title} - 805CashAndDash.com` : defaultTitle;
 
   return (
     <>

@@ -5,10 +5,8 @@
  */
 
 // You can delete this file if you're not using it
-// import "./src/styles/styles.css"
 
-// import "@fontsource/nunito-sans"; 
-// import "@fontsource/nunito-sans/100.css"; // Weight 100
+
 import "@fontsource/nunito-sans/200.css"; // Weight 200
 import "@fontsource/nunito-sans/300.css"; // Weight 300
 import "@fontsource/nunito-sans/400.css"; // Weight 400

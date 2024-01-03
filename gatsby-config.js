@@ -1,12 +1,7 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
     title: `805CashAndDash`,
@@ -15,29 +10,11 @@ module.exports = {
     siteUrl: `https://805CashAndDash.com/`,
   },
   plugins: [
-    // 'gatsby-plugin-react-iframe',
-    // `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -48,6 +25,27 @@ module.exports = {
         }
       }
     },
-    // `gatsby-transformer-ffmpeg`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is also optional
+        anonymize: true,
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        // Enables Google Optimize using your container Id
+        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        // Enables Google Optimize Experiment ID
+        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+        // Set Variation ID. 0 for original 1,2,3....
+        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+        // Any additional optional fields
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+      },
+    },
   ],
 }

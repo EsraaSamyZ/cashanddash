@@ -5,62 +5,71 @@ import { checkVIN, checkPlate } from "../Shared/Api";
 
 const Form = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-
-    const toggleOverlay = () => {
-        setIsOverlayVisible(!isOverlayVisible);
-    };
-
-  const [activeSection, setActiveSection] = useState("vin")
+  const [activeSection, setActiveSection] = useState("vin");
   const [formData, setFormData] = useState({
     licensePlate: "",
     state: "",
     vin: "",
-  })
-  const [errors, setErrors] = useState({})
+  });
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const toggleOverlay = () => {
+    setIsOverlayVisible(!isOverlayVisible);
+  };
 
-  // Clear previous errors
-  setErrors({});
-
-  // Perform validation (example for VIN)
-  if (activeSection === "vin" && !formData.vin) {
-    setErrors({ vin: "VIN is required" });
-    return;
-  }
-
-  try {
-    let result;
-
-    // Make API call based on active section
-    if (activeSection === "vin") {
-      result = await checkVIN(formData.vin);
+  const validateForm = () => {
+    const newErrors = {};
+    if (activeSection === "vin" && !formData.vin) {
+      newErrors.vin = "VIN is required";
     } else if (activeSection === "licensePlate") {
-      // Assuming you have a function for checking license plate
-      result = await checkPlate(formData.licensePlate, formData.state);
+      if (!formData.licensePlate) {
+        newErrors.licensePlate = "License Plate is required";
+      }
+      if (!formData.state) {
+        newErrors.state = "State selection is required";
+      }
     }
+    return newErrors;
+  };
 
-    // Handle the response
-    if (result && result.results) {
-      window.location.href = result.results;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formErrors = validateForm();
+    setErrors(formErrors);
+
+    if (Object.keys(formErrors).length === 0) {
+      setIsLoading(true);
+      try {
+        let result;
+        if (activeSection === "vin") {
+          result = await checkVIN(formData.vin);
+        } else {
+          result = await checkPlate(formData.licensePlate, formData.state);
+        }
+
+        if (result && result.results) {
+          window.location.href = result.results;
+        } else {
+          setErrors({ apiError: "No vehicle information found" });
+        }
+      } catch (error) {
+        setErrors({ apiError: "Error connecting to the server" });
+      } finally {
+        setIsLoading(false);
+      }
     }
-  } catch (error) {
-    console.error("There was a problem with the API call:", error);
-    // setErrors({ apiError: error.message });
-  }
-};
+  };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-  const handleChange = e => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
-
-  const isActive = section =>
+  const isActive = (section) =>
     activeSection === section
       ? "px-0.5 border-4 md:border-b-4 md:border-t-0 md:border-l-0 md:border-r-0 border-royal-blue font-bold text-royal-blue"
-      : ""
+      : "";
 
   return (
     <div
@@ -97,6 +106,7 @@ const handleSubmit = async (e) => {
               <>
                 <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-1">
                   <input
+                    // required
                     className="w-full text-md border border-dark-gray px-6 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                     type="text"
                     name="licensePlate"
@@ -106,6 +116,7 @@ const handleSubmit = async (e) => {
                   />
                   <div className="relative">
                     <select
+                      // required
                       className="w-full md:w-auto h-full text-md border border-dark-gray px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                       name="state"
                       value={formData.state}
@@ -193,6 +204,7 @@ const handleSubmit = async (e) => {
               <>
                 <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-1">
                   <input
+                    // required
                     className="w-full text-md border border-dark-gray px-6 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                     type="text"
                     name="vin"

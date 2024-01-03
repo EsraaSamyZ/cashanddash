@@ -10,7 +10,7 @@ export const checkVIN = async (vin) => {
         console.log(response.data)
         return response.data; 
     } catch (error) {
-        console.error("Error in checkVIN:", error);
+        // console.error("Error in checkVIN:", error);
         throw error;
     }
 };
@@ -21,7 +21,7 @@ export const checkPlate = async (plate, stateCode) => {
         const response = await axios.get(`${kbbBaseUrl}/check_plate?plate=${plate}&statecode=${stateCode}`);
         return response.data;
     } catch (error) {
-        console.error("Error in checkPlate:", error);
+        // console.error("Error in checkPlate:", error);
         throw error;
     }
 };
@@ -32,7 +32,7 @@ export const getPosts = async () => {
         const response = await axios.get(`https://storage.elfsight.com/api/facebook?q=17841463021198684%2Fmedia%3Ffields%3Dcaption%252Ccomments_count%252Cid%252Clike_count%252Cmedia_type%252Cmedia_url%252Cpermalink%252Cthumbnail_url%252Ctimestamp%252Cusername%252Cchildren%257Bmedia_type%252Cmedia_url%252Cthumbnail_url%257D&user_id=c9c3247b-a3d0-400a-a4fc-e4138982e07a`);
         return response.data.data;
     } catch (error) {
-        console.error("Error in instaApi:", error);
+        // console.error("Error in instaApi:", error);
         throw error;
     }
 };

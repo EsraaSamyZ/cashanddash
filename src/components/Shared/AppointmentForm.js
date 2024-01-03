@@ -134,7 +134,7 @@ const AppointmentForm = ({ setShowForm }) => {
                                     error={formErrors.email}
                                 />
                                 <FloatingLabelInput
-                                    type="date"
+                                    type="datetime-local"
                                     label="Appointment"
                                     name="appointment"
                                     value={formData.appointment}

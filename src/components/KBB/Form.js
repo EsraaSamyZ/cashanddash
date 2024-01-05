@@ -54,12 +54,13 @@ const Form = () => {
           setErrors({ apiError: "No vehicle information found" });
         }
       } catch (error) {
-        setErrors({ apiError: "Error connecting to the server" });
+        const errorMessage = error.response?.data?.message || "Error connecting to KBB";
+        setErrors({ apiError: errorMessage });
       } finally {
         setIsLoading(false);
       }
     }
-  };
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -189,10 +190,10 @@ const Form = () => {
                     <ArrowIcon />
                   </button>
                 </div>
-                <div className="text-sm text-deep-crimson text-left">
-                  {errors.licensePlate && <p>{errors.licensePlate}</p>}
-                  {errors.state && <p>{errors.state}</p>}
-                </div>
+                {errors.licensePlate && (<p className="text-sm text-deep-crimson text-left">{errors.licensePlate}</p>)}
+                {errors.state && (<p className="text-sm text-deep-crimson text-left">{errors.state}</p>)}
+                {errors.apiError && (<p className="text-sm text-deep-crimson text-left">{errors.apiError}</p>)}
+
                 <p className="text-sm text-gray-800 mt-3">
                   We only need your license plate to look up your car. It will
                   not be stored.
@@ -204,7 +205,7 @@ const Form = () => {
               <>
                 <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-1">
                   <input
-                    // required
+                    required
                     className="w-full text-md border border-dark-gray px-6 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none"
                     type="text"
                     name="vin"
@@ -221,11 +222,8 @@ const Form = () => {
                     <ArrowIcon />
                   </button>
                 </div>
-                {errors.vin && (
-                  <p className="text-sm text-deep-crimson text-left">
-                    {errors.vin}
-                  </p>
-                )}
+                {errors.vin && (<p className="text-sm text-deep-crimson text-left">{errors.vin}</p>)}
+                {errors.apiError && (<p className="text-sm text-deep-crimson text-left">{errors.apiError}</p>)}
                 <div>
                   <p className="text-sm text-royal-blue">
                     <button className="cursor-pointer p-2" onClick={toggleOverlay}>

@@ -3,7 +3,6 @@ import Wereisphoto from "../../images/svg/whereismyVIN.inline.svg"
 
 const VinOverlay = ({ setIsOverlayVisible }) => {
     if (typeof setIsOverlayVisible !== "function") {
-        // console.error("setIsOverlayVisible must be a function");
         return null;
     }
     return (
@@ -25,10 +24,9 @@ const VinOverlay = ({ setIsOverlayVisible }) => {
                 onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.stopPropagation();
-                        // Additional logic for keyboard interaction
                     }
                 }}
-                role="button" // or role="link" if it acts as a link
+                role="button"
                 tabIndex="0"
             >
                 <Wereisphoto className="w-full" />

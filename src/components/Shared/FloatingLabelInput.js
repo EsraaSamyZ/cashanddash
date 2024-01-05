@@ -19,7 +19,7 @@ const FloatingLabelInput = ({ label, type, name, value, required, error, onChang
                 onChange={onChange}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
-                className={`w-full h-12 text-md border ${error ? "border-red-500" : "border-dark-gray"} px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none`}
+                className={`w-full h-12 text-md border ${error ? "border-red-500" : "border-dark-gray"} ${isFocused || value ? "text-black" : "text-white"} px-3 py-3 rounded-lg focus:border-royal-blue focus:border-2 focus:outline-none`}
             />
             {error && <span className="text-red-500 text-xs mt-1">{error}</span>}
         </div>

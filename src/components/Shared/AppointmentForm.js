@@ -95,7 +95,6 @@ const AppointmentForm = ({ setShowForm }) => {
                 onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.stopPropagation();
-                        // Implement the same logic as onClick here
                     }
                 }}
                 role="button"

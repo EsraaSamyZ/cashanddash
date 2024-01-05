@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Eefficient way to convert your vehicle into instant cash.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "805CashAndDash.com",
   "dependencies": {
     "@fontsource/nunito-sans": "^5.0.8",
     "gatsby": "^5.12.4",

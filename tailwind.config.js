@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        'xs': '1rem',  // Example of customizing an existing size
+        'xs': '1rem',
         'sm': '1.125rem',
         'base': '1rem',
         'lg': '1.25rem',
@@ -17,7 +17,6 @@ module.exports = {
         '5xl': '4rem',
         '6xl': '5rem',
         '7xl': '5rem',
-        // Add more custom sizes as needed
       },
       fontWeight: {
         'thin': 600,

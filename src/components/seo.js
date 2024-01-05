@@ -33,8 +33,6 @@ function Seo({ description, title, location, children }) {
     // "telephone": "BUSINESS_PHONE_NUMBER"
   }
 
-  // const fullTitle = title ? `${title} - 805CashAndDash.com` : defaultTitle;
-
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>

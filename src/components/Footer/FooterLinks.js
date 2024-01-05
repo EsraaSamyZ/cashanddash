@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import ContactUsBtn from "../Shared/ContactUsBtn";
+import { Link } from "gatsby"
+import { useLocation } from "@reach/router"
 
 const FooterLinks = () => {
     const [openSection, setOpenSection] = useState(null);
+    const location = useLocation()
 
     const toggleSection = (section) => {
         if (openSection === section) {
@@ -11,6 +14,35 @@ const FooterLinks = () => {
             setOpenSection(section);
         }
     };
+
+    const handleNavLinkClick = (e, targetId) => {
+        if (location.pathname === "/" && targetId) {
+          e.preventDefault()
+    
+          const targetSection = document.getElementById(targetId)
+    
+          if (targetSection) {
+            const offset = 150
+            const sectionTop =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset -
+              offset
+    
+            window.scrollTo({
+              top: sectionTop,
+              behavior: "smooth",
+            })
+          }
+        } else if (location.pathname === "/" && !targetId) {
+          e.preventDefault()
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          })
+        }
+
+      }
 
     return (
         <div className="w-4/5 mx-auto">
@@ -28,11 +60,10 @@ const FooterLinks = () => {
                         <div className={`${openSection === "navigation" ? "" : "hidden"} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Navigation</h3>
                             <ul className="pl-6 lg:pl-0 lg:text-xl text-light-gray">
-                                <li className="mb-3">Home</li>
-                                <li className="mb-3">How It Works</li>
-                                <li className="mb-3">Reviews</li>
-                                <li className="mb-3"><a href="/aboutus">About Us</a></li>
-                                <li className="mb-3">FAQs</li>
+                                <li className="mb-3"><Link to="/" onClick={e => handleNavLinkClick(e, null)}>Home</Link></li>
+                                <li className="mb-3"><Link to="/" onClick={e => handleNavLinkClick(e, "howItWorks")}>How It Works</Link></li>
+                                <li className="mb-3"><Link to="/aboutus">About Us</Link></li>
+                                <li className="mb-3"><Link to="/" onClick={e => handleNavLinkClick(e, "faqs")}>FAQs</Link></li>
                                 <li className="mb-3"><ContactUsBtn /> in Santa Maria, CA</li>
                             </ul>
                         </div>
@@ -69,10 +100,10 @@ const FooterLinks = () => {
                         <div className={`${openSection === "legal" ? "" : "hidden"} lg:block bg-light-gray bg-opacity-10 py-3 mb-5 lg:py-0 lg:bg-midnight-blue`}>
                             <h3 className="text-2xl font-semibold mb-5 hidden lg:block">Legal</h3>
                             <ul className="pl-6 lg:pl-0 lg:text-xl text-light-gray">
-                                <li className="mb-3">Terms and Conditions</li>
-                                <li className="mb-3"><a href="/policies">Privacy Policy</a></li>
-                                <li className="mb-3"><a href="/policies">Cookies Policy</a></li>
-                                <li className="mb-3">Sitemap</li>
+                                <li className="mb-3"><Link to="/policies">Terms and Conditions</Link></li>
+                                <li className="mb-3"><Link to="/policies">Privacy Policy</Link></li>
+                                <li className="mb-3"><Link to="/policies">Cookies Policy</Link></li>
+                                <li className="mb-3"><Link to="/location">Sitemap</Link></li>
                             </ul>
                         </div>
                     </div>

@@ -10,7 +10,7 @@ const Howto = () => {
 
     return (
         <>
-            <div className="bg-midnight-blue items-center text-center">
+            <div id="howItWorks" className="bg-midnight-blue items-center text-center">
                 <div className="w-4/5 mx-auto">
                     <h2 className=" text-white text-3xl md:text-5xl font-extrabold font-extrabold animate-fade-up animate-duration-1000 animate-delay-300">How to <span className="text-deep-crimson">CASH & DASH</span></h2>
 

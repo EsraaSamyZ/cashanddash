@@ -4,6 +4,13 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Loader from "../components/Shared/Loader"
 import bg from "../images/bg-kbb.webp"
+// import HeroComponent from "../components/Hero/HeroComponent"
+// import Kbb from "../components/KBB/Kbb.js"
+
+// import Howto from "../components/Howto/Howto.js"
+// import InstaPosts from "../components/InstaPosts/InstaPosts.js"
+// import Services from "../components/Services/Services.js"
+// import FAQs from "../components/FAQs/FAQs.js"
 
 const HeroComponent = lazy(() => import("../components/Hero/HeroComponent"))
 const Kbb = lazy(() => import("../components/KBB/Kbb.js"))
@@ -86,7 +93,9 @@ const IndexPage = () => {
     <Layout>
       <div className="relative" style={{ height: `${parentHeight}px` }}>
         <div className="relative z-10" ref={heroRef}>
-          <HeroComponent />
+          <Suspense fallback={<Loader />}>
+            <HeroComponent />
+          </Suspense>
         </div>
 
         <div
